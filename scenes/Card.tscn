@@ -1,0 +1,171 @@
+[gd_scene load_steps=7 format=3 uid="uid://df0thsjlco4v2"]
+
+[ext_resource type="Script" uid="uid://c0mufdk1hofe1" path="res://scripts/Card.gd" id="1_yiag5"]
+[ext_resource type="Texture2D" uid="uid://dho5fckyes33a" path="res://assets/images/image_4.png" id="2_tgmmg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qf083"]
+bg_color = Color(0.42632788, 0.77260965, 0.1729129, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0.72156864, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4dx8l"]
+bg_color = Color(0.81960785, 0.627451, 0.42352942, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.24313726, 0.08235294, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tgmmg"]
+load_path = "res://.godot/imported/arrow_right.png-643779e151dac3d6f93954a493c80e22.ctex"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_40ytf"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0.96652657, 0.15168926, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Card" type="Control"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yiag5")
+
+[node name="FundoMatch" type="Panel" parent="."]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qf083")
+
+[node name="IconeCard" type="TextureRect" parent="."]
+z_index = 1
+texture_filter = 4
+texture_repeat = 2
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_tgmmg")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="ColorRect" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4dx8l")
+
+[node name="SetasMovimento" type="Control" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Direita" type="TextureRect" parent="SetasMovimento"]
+z_index = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6
+anchor_top = 0.3
+anchor_right = 1.0
+anchor_bottom = 0.7
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("CompressedTexture2D_tgmmg")
+expand_mode = 5
+
+[node name="Esquerda" type="TextureRect" parent="SetasMovimento"]
+z_index = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.3
+anchor_right = 0.4
+anchor_bottom = 0.7
+mouse_filter = 2
+texture = SubResource("CompressedTexture2D_tgmmg")
+expand_mode = 5
+flip_h = true
+
+[node name="Baixo" type="TextureRect" parent="SetasMovimento"]
+z_index = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 1.0
+anchor_right = 0.7
+anchor_bottom = 1.4
+rotation = 4.712389
+mouse_filter = 2
+texture = SubResource("CompressedTexture2D_tgmmg")
+expand_mode = 5
+flip_h = true
+
+[node name="Cima" type="TextureRect" parent="SetasMovimento"]
+z_index = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7
+anchor_right = 1.1
+anchor_bottom = 0.4
+rotation = 1.5707964
+mouse_filter = 2
+texture = SubResource("CompressedTexture2D_tgmmg")
+expand_mode = 5
+flip_h = true
+
+[node name="BordaSelecao" type="Panel" parent="."]
+visible = false
+z_index = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_40ytf")

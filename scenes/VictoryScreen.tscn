@@ -1,0 +1,194 @@
+[gd_scene load_steps=12 format=3 uid="uid://b36gp54io4kqq"]
+
+[ext_resource type="StyleBox" uid="uid://bifftooe260b" path="res://assets/styles/window.tres" id="1_86fr6"]
+[ext_resource type="Texture2D" uid="uid://dpc2dux5mhg4l" path="res://assets/ui/icons/star_full.png" id="2_70mwv"]
+[ext_resource type="Texture2D" uid="uid://ba0cvf7v8484r" path="res://assets/ui/icons/star_empty.png" id="3_86fr6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kftox"]
+font_size = 41
+font_color = Color(0.5853204, 0.26653427, 0.111446954, 1)
+stacked_outline_count = 1
+stacked_outline_0/size = 3
+stacked_outline_0/color = Color(0.58431375, 0.26666668, 0.10980392, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7jara"]
+font_color = Color(0.21960784, 0.31764707, 0.14117648, 1)
+shadow_color = Color(0.21960784, 0.31764707, 0.14117648, 1)
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_86fr6"]
+font_color = Color(0.21960784, 0.31764707, 0.14117648, 1)
+shadow_color = Color(0.21960784, 0.31764707, 0.14117648, 1)
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="FontVariation" id="FontVariation_86fr6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aemqt"]
+bg_color = Color(0.3764706, 0.58431375, 0.2901961, 1)
+border_width_bottom = 3
+border_color = Color(0.2784314, 0.4745098, 0.27450982, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.36078432)
+shadow_size = 2
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqmlf"]
+bg_color = Color(0.9670957, 0.6854299, 0, 1)
+border_width_bottom = 3
+border_color = Color(0.6711026, 0.45839322, 3.85046e-07, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.36078432)
+shadow_size = 2
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="FontVariation" id="FontVariation_kftox"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7jara"]
+bg_color = Color(0.84705883, 0.43137255, 0.1254902, 1)
+border_width_bottom = 3
+border_color = Color(0.72156864, 0.3372549, 0.12941177, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.36078432)
+shadow_size = 2
+shadow_offset = Vector2(0, 3)
+
+[node name="VictoryScreen" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.27752772, 0.27752772, 0.27752772, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.5
+offset_top = -150.0
+offset_right = 127.5
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = ExtResource("1_86fr6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "PARABÉNS!"
+label_settings = SubResource("LabelSettings_kftox")
+horizontal_alignment = 1
+
+[node name="MovesLabel" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Você venceu em X movimentos!"
+label_settings = SubResource("LabelSettings_7jara")
+horizontal_alignment = 1
+
+[node name="Stars" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="Star1" type="TextureButton" parent="PanelContainer/VBoxContainer/Stars"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+texture_normal = ExtResource("2_70mwv")
+texture_disabled = ExtResource("3_86fr6")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Star2" type="TextureButton" parent="PanelContainer/VBoxContainer/Stars"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+texture_normal = ExtResource("2_70mwv")
+texture_disabled = ExtResource("3_86fr6")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Star3" type="TextureButton" parent="PanelContainer/VBoxContainer/Stars"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+disabled = true
+texture_normal = ExtResource("2_70mwv")
+texture_disabled = ExtResource("3_86fr6")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="HighscoreMessage" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Novo Recorde!"
+label_settings = SubResource("LabelSettings_86fr6")
+horizontal_alignment = 1
+
+[node name="ActionButtons" type="VBoxContainer" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="ContinueButton" type="Button" parent="PanelContainer/VBoxContainer/ActionButtons"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_86fr6")
+theme_override_font_sizes/font_size = 19
+theme_override_styles/normal = SubResource("StyleBoxFlat_aemqt")
+text = "Continuar"
+
+[node name="PlayAgainButton" type="Button" parent="PanelContainer/VBoxContainer/ActionButtons"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_86fr6")
+theme_override_font_sizes/font_size = 19
+theme_override_styles/normal = SubResource("StyleBoxFlat_yqmlf")
+text = "Jogar Novamente"
+
+[node name="MenuButton" type="Button" parent="PanelContainer/VBoxContainer/ActionButtons"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_kftox")
+theme_override_font_sizes/font_size = 19
+theme_override_styles/normal = SubResource("StyleBoxFlat_7jara")
+text = "Menu Principal"

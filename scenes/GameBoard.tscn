@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b22v6w85o2hct"]
+
+[ext_resource type="Script" uid="uid://c8325d8qf1bvf" path="res://scripts/GameBoard.gd" id="1_nx74b"]
+[ext_resource type="PackedScene" uid="uid://df0thsjlco4v2" path="res://scenes/Card.tscn" id="2_v0kx6"]
+
+[node name="GameBoard" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nx74b")
+card_scene = ExtResource("2_v0kx6")

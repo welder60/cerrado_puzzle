@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=3 uid="uid://bog5f2v8caems"]
+
+[ext_resource type="Script" uid="uid://cftxk771w0x0l" path="res://scripts/GameStages.gd" id="1_2pbjo"]
+[ext_resource type="PackedScene" uid="uid://c06t72q58soo6" path="res://scenes/StageButton.tscn" id="2_dcuyx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dcuyx"]
+bg_color = Color(0.8987687, 0.8518505, 0.7087613, 0.79607844)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="FontVariation" id="FontVariation_dcuyx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2pbjo"]
+bg_color = Color(0.84705883, 0.43137255, 0.1254902, 1)
+border_width_bottom = 3
+border_color = Color(0.72156864, 0.3372549, 0.12941177, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.36078432)
+shadow_size = 2
+shadow_offset = Vector2(0, 3)
+
+[node name="GameStages" type="Control" node_paths=PackedStringArray("stages_container")]
+custom_minimum_size = Vector2(500, 800)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_2pbjo")
+stages_container = NodePath("Panel/VBoxContainer/ScrollContainer/HFlowContainer")
+stage_scene = ExtResource("2_dcuyx")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dcuyx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_direction = 3
+layout_mode = 2
+
+[node name="MenuButton" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_dcuyx")
+theme_override_font_sizes/font_size = 19
+theme_override_styles/normal = SubResource("StyleBoxFlat_2pbjo")
+text = "Voltar"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="HFlowContainer" type="HFlowContainer" parent="Panel/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3

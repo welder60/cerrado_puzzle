@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=3 uid="uid://ctm5qe5ot5yt7"]
+
+[ext_resource type="Script" uid="uid://e6k1yd2vkdvn" path="res://scripts/Main.gd" id="1_0bbpv"]
+[ext_resource type="Script" uid="uid://dvknuc4v40bl8" path="res://scripts/ScoreManager.gd" id="2_0bbpv"]
+[ext_resource type="PackedScene" uid="uid://l6e50qovrfld" path="res://scenes/GameUI.tscn" id="2_rvslj"]
+[ext_resource type="Script" uid="uid://x6s5xcgr8aa7" path="res://scripts/UIManager.gd" id="4_c01mt"]
+[ext_resource type="PackedScene" uid="uid://bog5f2v8caems" path="res://scenes/GameStages.tscn" id="4_nxtc6"]
+[ext_resource type="PackedScene" uid="uid://bdryyu2iknxg1" path="res://scenes/MainMenu.tscn" id="4_vcsgt"]
+[ext_resource type="PackedScene" uid="uid://b36gp54io4kqq" path="res://scenes/VictoryScreen.tscn" id="5_c01mt"]
+[ext_resource type="Texture2D" uid="uid://b7bdpc4plpqqn" path="res://assets/backgrounds/game_background.png" id="8_jlsqs"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0bbpv")
+
+[node name="UIManager" type="MarginContainer" parent="."]
+process_priority = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 16
+script = ExtResource("4_c01mt")
+
+[node name="MainMenu" parent="UIManager" instance=ExtResource("4_vcsgt")]
+layout_mode = 2
+
+[node name="GameStages" parent="UIManager" instance=ExtResource("4_nxtc6")]
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 2
+
+[node name="VictoryScreen" parent="UIManager" instance=ExtResource("5_c01mt")]
+top_level = true
+z_index = 10
+layout_mode = 2
+color = Color(0.21960784, 0.21960784, 0.21960784, 0.4862745)
+
+[node name="GameUI" parent="UIManager" instance=ExtResource("2_rvslj")]
+layout_mode = 2
+
+[node name="ScoreManager" type="Node" parent="."]
+script = ExtResource("2_0bbpv")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("8_jlsqs")
+expand_mode = 3
+stretch_mode = 6

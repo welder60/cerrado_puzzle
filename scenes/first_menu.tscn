@@ -1,0 +1,149 @@
+[gd_scene load_steps=10 format=3 uid="uid://bbw8xe2k7f3v4"]
+
+[ext_resource type="StyleBox" uid="uid://bifftooe260b" path="res://assets/styles/window.tres" id="1_ggapq"]
+
+[sub_resource type="FontVariation" id="FontVariation_2wh52"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2wh52"]
+bg_color = Color(0.3764706, 0.58431375, 0.2901961, 1)
+border_width_bottom = 3
+border_color = Color(0.2784314, 0.4745098, 0.27450982, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.36078432)
+shadow_size = 2
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l72w3"]
+bg_color = Color(0.9079727, 0.24813586, 3.85046e-07, 1)
+border_width_bottom = 3
+border_color = Color(0.7325631, 0.20607248, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.36078432)
+shadow_size = 2
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ucygd"]
+bg_color = Color(0.43001485, 0.49363917, 0.8031758, 1)
+border_width_bottom = 3
+border_color = Color(0.421266, 0.3520536, 0.7017491, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.36078432)
+shadow_size = 2
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="FontVariation" id="FontVariation_l72w3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_826wr"]
+bg_color = Color(0.84705883, 0.43137255, 0.1254902, 1)
+border_width_bottom = 3
+border_color = Color(0.72156864, 0.3372549, 0.12941177, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.36078432)
+shadow_size = 2
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="FontVariation" id="FontVariation_ow34m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ow34m"]
+bg_color = Color(0.9670957, 0.6854299, 0, 1)
+border_width_bottom = 3
+border_color = Color(0.6711026, 0.45839322, 3.85046e-07, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.36078432)
+shadow_size = 2
+shadow_offset = Vector2(0, 3)
+
+[node name="FirstMenu" type="PanelContainer"]
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = ExtResource("1_ggapq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = -4
+alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 23
+
+[node name="PlayButton" type="Button" parent="VBoxContainer/Buttons"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_2wh52")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_2wh52")
+text = "Jogar"
+
+[node name="QuickPlayButton" type="Button" parent="VBoxContainer/Buttons"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_2wh52")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_l72w3")
+text = "Partida Rápida"
+
+[node name="HTPButton" type="Button" parent="VBoxContainer/Buttons"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_2wh52")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_ucygd")
+text = "Como Jogar"
+
+[node name="ConfigButton" type="Button" parent="VBoxContainer/Buttons"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_l72w3")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_826wr")
+text = "Configurações"
+
+[node name="AboutButton" type="Button" parent="VBoxContainer/Buttons"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_ow34m")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_ow34m")
+text = "Sobre"

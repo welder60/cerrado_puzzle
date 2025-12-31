@@ -1,0 +1,10 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Pastas de exportação e builds
+/[Bb]uild/
+/[Bb]uilds/
+*.pck
+*.exe
+*.apk

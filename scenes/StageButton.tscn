@@ -1,0 +1,113 @@
+[gd_scene load_steps=7 format=3 uid="uid://c06t72q58soo6"]
+
+[ext_resource type="Script" uid="uid://76beqxi1c1su" path="res://scripts/StageButton.gd" id="1_prv74"]
+[ext_resource type="Texture2D" uid="uid://bpn00lg4u2nu1" path="res://assets/ui/buttons/stage_active.webp" id="1_slapx"]
+[ext_resource type="Texture2D" uid="uid://kn7gj4gi40iw" path="res://assets/ui/buttons/stage_disabled.png" id="2_lvcnw"]
+[ext_resource type="Texture2D" uid="uid://dpc2dux5mhg4l" path="res://assets/ui/icons/star_full.png" id="4_prv74"]
+[ext_resource type="Texture2D" uid="uid://ba0cvf7v8484r" path="res://assets/ui/icons/star_empty.png" id="5_65vcn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lvcnw"]
+font_size = 40
+font_color = Color(1, 1, 0.6627451, 1)
+outline_size = 2
+outline_color = Color(0.39091742, 0.2400929, 0.16531166, 1)
+
+[node name="StageButton" type="Control"]
+custom_minimum_size = Vector2(170, 170)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = -85.0
+offset_right = 85.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_prv74")
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="StageButton" type="TextureButton" parent="Control"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_slapx")
+texture_disabled = ExtResource("2_lvcnw")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "00"
+label_settings = SubResource("LabelSettings_lvcnw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Stars" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.70600003
+anchor_right = 1.0
+anchor_bottom = 0.96500003
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="Star1" type="TextureButton" parent="Stars"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 5
+mouse_filter = 2
+disabled = true
+texture_normal = ExtResource("4_prv74")
+texture_disabled = ExtResource("5_65vcn")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Star2" type="TextureButton" parent="Stars"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 5
+mouse_filter = 2
+disabled = true
+texture_normal = ExtResource("4_prv74")
+texture_disabled = ExtResource("5_65vcn")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Star3" type="TextureButton" parent="Stars"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 5
+mouse_filter = 2
+disabled = true
+texture_normal = ExtResource("4_prv74")
+texture_disabled = ExtResource("5_65vcn")
+ignore_texture_size = true
+stretch_mode = 5
