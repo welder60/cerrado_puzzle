@@ -21,24 +21,6 @@ expand_margin_top = 5.0
 expand_margin_right = 5.0
 expand_margin_bottom = 5.0
 
-[sub_resource type="FontVariation" id="FontVariation_rs3te"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_56cg4"]
-bg_color = Color(0.84705883, 0.43137255, 0.1254902, 1)
-border_width_bottom = 3
-border_color = Color(0.72156864, 0.3372549, 0.12941177, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-expand_margin_left = 5.0
-expand_margin_top = 5.0
-expand_margin_right = 5.0
-expand_margin_bottom = 5.0
-shadow_color = Color(0, 0, 0, 0.36078432)
-shadow_size = 2
-shadow_offset = Vector2(0, 3)
-
 [sub_resource type="FontVariation" id="FontVariation_4s3j0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ro0d"]
@@ -57,149 +39,173 @@ shadow_color = Color(0, 0, 0, 0.36078432)
 shadow_size = 2
 shadow_offset = Vector2(0, 3)
 
-[node name="GameUI" type="Control"]
-layout_mode = 3
+[sub_resource type="FontVariation" id="FontVariation_rs3te"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_56cg4"]
+bg_color = Color(0.84705883, 0.43137255, 0.1254902, 1)
+border_width_bottom = 3
+border_color = Color(0.72156864, 0.3372549, 0.12941177, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.36078432)
+shadow_size = 2
+shadow_offset = Vector2(0, 3)
+
+[node name="GameUI" type="VBoxContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 40
+alignment = 1
 
-[node name="TopUI" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -159.0
-offset_top = -181.0
-offset_right = 159.0
-offset_bottom = 181.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 20
-
-[node name="Panel" type="Panel" parent="TopUI"]
-custom_minimum_size = Vector2(0, 50)
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
-size_flags_vertical = 6
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_rs3te")
 
-[node name="MarginContainer" type="MarginContainer" parent="TopUI/Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TopUI/Panel/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer"]
 z_index = 1
 layout_mode = 2
-theme_override_constants/separation = 18
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+alignment = 2
 
-[node name="MovesLabel" type="Label" parent="TopUI/Panel/MarginContainer/HBoxContainer"]
+[node name="Labels" type="VBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 1
+
+[node name="MovesLabel" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/Labels"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 50
 text = "Movimentos: 00"
+horizontal_alignment = 3
 vertical_alignment = 1
 
-[node name="MenuButton" type="Button" parent="TopUI/Panel/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(90, 0)
+[node name="HScoreLabel" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/Labels"]
 layout_mode = 2
-size_flags_horizontal = 4
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = SubResource("FontVariation_rs3te")
-theme_override_font_sizes/font_size = 19
-theme_override_styles/normal = SubResource("StyleBoxFlat_56cg4")
-text = "Voltar"
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 50
+text = "Recorde: 00"
+horizontal_alignment = 3
+vertical_alignment = 1
 
-[node name="ResetButton" type="Button" parent="TopUI/Panel/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(90, 0)
+[node name="Buttons" type="VBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 21
+
+[node name="ResetButton" type="Button" parent="MarginContainer/MarginContainer/HBoxContainer/Buttons"]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_4s3j0")
-theme_override_font_sizes/font_size = 19
+theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_7ro0d")
 text = "Reiniciar"
+icon_alignment = 2
+expand_icon = true
 
-[node name="GameBoard" type="PanelContainer" parent="TopUI" node_paths=PackedStringArray("layout_grid")]
+[node name="MenuButton" type="Button" parent="MarginContainer/MarginContainer/HBoxContainer/Buttons"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_rs3te")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_56cg4")
+text = "Sair"
+
+[node name="GameBoard" type="PanelContainer" parent="." node_paths=PackedStringArray("layout_grid")]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 6
+size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_rs3te")
 script = ExtResource("1_rs3te")
 card_scene = ExtResource("3_4s3j0")
 layout_grid = NodePath("GridContainer")
 
-[node name="GridContainer" type="GridContainer" parent="TopUI/GameBoard"]
+[node name="GridContainer" type="GridContainer" parent="GameBoard"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 columns = 3
 
-[node name="TextureRect" type="TextureRect" parent="TopUI/GameBoard/GridContainer"]
+[node name="TextureRect" type="TextureRect" parent="GameBoard/GridContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture = ExtResource("3_rs3te")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="TextureRect2" type="TextureRect" parent="TopUI/GameBoard/GridContainer"]
+[node name="TextureRect2" type="TextureRect" parent="GameBoard/GridContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture = ExtResource("3_rs3te")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="TextureRect3" type="TextureRect" parent="TopUI/GameBoard/GridContainer"]
+[node name="TextureRect3" type="TextureRect" parent="GameBoard/GridContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture = ExtResource("3_rs3te")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="TextureRect4" type="TextureRect" parent="TopUI/GameBoard/GridContainer"]
+[node name="TextureRect4" type="TextureRect" parent="GameBoard/GridContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture = ExtResource("3_rs3te")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="TextureRect5" type="TextureRect" parent="TopUI/GameBoard/GridContainer"]
+[node name="TextureRect5" type="TextureRect" parent="GameBoard/GridContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture = ExtResource("3_rs3te")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="TextureRect6" type="TextureRect" parent="TopUI/GameBoard/GridContainer"]
+[node name="TextureRect6" type="TextureRect" parent="GameBoard/GridContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture = ExtResource("3_rs3te")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="TextureRect7" type="TextureRect" parent="TopUI/GameBoard/GridContainer"]
+[node name="TextureRect7" type="TextureRect" parent="GameBoard/GridContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture = ExtResource("3_rs3te")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="TextureRect8" type="TextureRect" parent="TopUI/GameBoard/GridContainer"]
+[node name="TextureRect8" type="TextureRect" parent="GameBoard/GridContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture = ExtResource("3_rs3te")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="TextureRect9" type="TextureRect" parent="TopUI/GameBoard/GridContainer"]
+[node name="TextureRect9" type="TextureRect" parent="GameBoard/GridContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture = ExtResource("3_rs3te")

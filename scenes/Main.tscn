@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://ctm5qe5ot5yt7"]
+[gd_scene load_steps=8 format=3 uid="uid://ctm5qe5ot5yt7"]
 
 [ext_resource type="Script" uid="uid://e6k1yd2vkdvn" path="res://scripts/Main.gd" id="1_0bbpv"]
-[ext_resource type="Script" uid="uid://dvknuc4v40bl8" path="res://scripts/ScoreManager.gd" id="2_0bbpv"]
 [ext_resource type="PackedScene" uid="uid://l6e50qovrfld" path="res://scenes/GameUI.tscn" id="2_rvslj"]
 [ext_resource type="Script" uid="uid://x6s5xcgr8aa7" path="res://scripts/UIManager.gd" id="4_c01mt"]
 [ext_resource type="PackedScene" uid="uid://bog5f2v8caems" path="res://scenes/GameStages.tscn" id="4_nxtc6"]
@@ -28,9 +27,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 50
+theme_override_constants/margin_top = 100
 theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 16
+theme_override_constants/margin_bottom = 100
 script = ExtResource("4_c01mt")
 
 [node name="MainMenu" parent="UIManager" instance=ExtResource("4_vcsgt")]
@@ -48,9 +47,6 @@ color = Color(0.21960784, 0.21960784, 0.21960784, 0.4862745)
 
 [node name="GameUI" parent="UIManager" instance=ExtResource("2_rvslj")]
 layout_mode = 2
-
-[node name="ScoreManager" type="Node" parent="."]
-script = ExtResource("2_0bbpv")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 show_behind_parent = true

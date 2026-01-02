@@ -1,42 +1,55 @@
-# ScoreManager.gd
-# Script para gerenciar a pontuação e o highscore.
+extends Control
+class_name ScoreManager
+# Estrutura: { "1": {"moves": 5, "stars": 3}, "2": {"moves": 12, "stars": 2} }
+var level_data: Dictionary = {}
+const SAVE_PATH = "user://level_scores.save"
 
-extends Node
+# Atualiza os dados da fase. Retorna um dicionário com o que mudou.
+func update_stage_result(stage_id: int, moves: int, stars: int) -> Dictionary:	
+	load_data()
+	var stage_key = str(stage_id)
+	var new_record = false
+	var new_stars = false
+	# Se a fase nunca foi jogada, cria a entrada inicial
+	if not level_data.has(stage_key):
+		level_data[stage_key] = {"moves": moves, "stars": stars}
+		new_record = true
+		new_stars = true
+	else:
+		# Verifica se bateu o recorde de movimentos (menor é melhor)
+		if moves < level_data[stage_key]["moves"]:
+			level_data[stage_key]["moves"] = moves
+			new_record = true
+		
+		# Verifica se ganhou mais estrelas do que já tinha
+		if stars > level_data[stage_key]["stars"]:
+			level_data[stage_key]["stars"] = stars
+			new_stars = true
+	
+	if new_record or new_stars:
+		save_data()
+	
+	return {"new_record": new_record, "new_stars": new_stars}
 
-# --- Variáveis ---
-var highscore: int = 0
-const SAVE_PATH = "user://highscore.save"
+# Retorna os dados de uma fase ou valores padrão
+func get_stage_info(stage_id: int) -> Dictionary:
+	load_data()
+	var stage_key = str(stage_id)
+	if level_data.has(stage_key):
+		return level_data[stage_key]
+	return {"moves": -1, "stars": 0}
 
-# Chamado quando o nó entra na árvore da cena.
-func _ready():
-	load_highscore()
-
-# Calcula o score final baseado no número de movimentos.
-func calculate_score(moves_count: int) -> int:
-	# Fórmula simples: menos movimentos = maior score.
-	# 10000 é um valor base, pode ser ajustado.
-	var score = 10000 - (moves_count * 50)
-	if score < 0:
-		score = 0
-	return score
-
-# Atualiza o highscore se o novo score for maior.
-func update_highscore(new_score: int):
-	if new_score > highscore:
-		highscore = new_score
-		save_highscore()
-
-# Salva o highscore em um arquivo.
-func save_highscore():
+func save_data():
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	if file:
-		file.store_var(highscore)
+		file.store_var(level_data)
 		file.close()
 
-# Carrega o highscore de um arquivo.
-func load_highscore():
+func load_data():
 	if FileAccess.file_exists(SAVE_PATH):
 		var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
 		if file:
-			highscore = file.get_var()
+			var data = file.get_var()
+			if data is Dictionary:
+				level_data = data
 			file.close()

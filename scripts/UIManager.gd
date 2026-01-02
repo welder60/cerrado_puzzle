@@ -23,11 +23,11 @@ signal menu_button_pressed
 func _ready():
 	# Conecta os sinais dos botões a este script
 	# Menu Principal
-	main_menu.get_node("VBoxContainer/CenterContainer/FirstMenu/VBoxContainer/Buttons/PlayButton").pressed.connect(_on_PlayButton_pressed)
+	main_menu.get_node("VBoxContainer/CenterContainer/FirstMenu/Buttons/PlayButton").pressed.connect(_on_PlayButton_pressed)
 		
 		# UI do Jogo
-	game_ui.get_node("TopUI/Panel/MarginContainer/HBoxContainer/ResetButton").pressed.connect(_on_ResetButton_pressed)
-	game_ui.get_node("TopUI/Panel/MarginContainer/HBoxContainer/MenuButton").pressed.connect(_on_MenuButton_pressed)
+	game_ui.get_node("MarginContainer/MarginContainer/HBoxContainer/Buttons/ResetButton").pressed.connect(_on_ResetButton_pressed)
+	game_ui.get_node("MarginContainer/MarginContainer/HBoxContainer/Buttons/MenuButton").pressed.connect(_on_MenuButton_pressed)
 	
 	game_stages.get_node("Panel/VBoxContainer/HBoxContainer/MenuButton").pressed.connect(_on_MenuButton_pressed)
 	# Tela de Vitória

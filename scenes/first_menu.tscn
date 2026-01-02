@@ -5,6 +5,10 @@
 [sub_resource type="FontVariation" id="FontVariation_2wh52"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2wh52"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
 bg_color = Color(0.3764706, 0.58431375, 0.2901961, 1)
 border_width_bottom = 3
 border_color = Color(0.2784314, 0.4745098, 0.27450982, 1)
@@ -37,6 +41,10 @@ shadow_size = 2
 shadow_offset = Vector2(0, 3)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ucygd"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
 bg_color = Color(0.43001485, 0.49363917, 0.8031758, 1)
 border_width_bottom = 3
 border_color = Color(0.421266, 0.3520536, 0.7017491, 1)
@@ -55,6 +63,10 @@ shadow_offset = Vector2(0, 3)
 [sub_resource type="FontVariation" id="FontVariation_l72w3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_826wr"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
 bg_color = Color(0.84705883, 0.43137255, 0.1254902, 1)
 border_width_bottom = 3
 border_color = Color(0.72156864, 0.3372549, 0.12941177, 1)
@@ -89,61 +101,64 @@ shadow_size = 2
 shadow_offset = Vector2(0, 3)
 
 [node name="FirstMenu" type="PanelContainer"]
-size_flags_horizontal = 4
-size_flags_vertical = 4
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
 theme_override_styles/panel = ExtResource("1_ggapq")
+metadata/_edit_horizontal_guides_ = [-160.0]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Buttons" type="VBoxContainer" parent="."]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = -4
+theme_override_constants/separation = 23
 alignment = 1
 
-[node name="Buttons" type="VBoxContainer" parent="VBoxContainer"]
-custom_minimum_size = Vector2(200, 0)
+[node name="PlayButton" type="Button" parent="Buttons"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 23
-
-[node name="PlayButton" type="Button" parent="VBoxContainer/Buttons"]
-layout_mode = 2
+size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_2wh52")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxFlat_2wh52")
+action_mode = 0
 text = "Jogar"
 
-[node name="QuickPlayButton" type="Button" parent="VBoxContainer/Buttons"]
+[node name="QuickPlayButton" type="Button" parent="Buttons"]
 visible = false
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_2wh52")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxFlat_l72w3")
 text = "Partida Rápida"
 
-[node name="HTPButton" type="Button" parent="VBoxContainer/Buttons"]
+[node name="HTPButton" type="Button" parent="Buttons"]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_2wh52")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxFlat_ucygd")
 text = "Como Jogar"
 
-[node name="ConfigButton" type="Button" parent="VBoxContainer/Buttons"]
+[node name="ConfigButton" type="Button" parent="Buttons"]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_l72w3")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxFlat_826wr")
-text = "Configurações"
+text = "Opções"
 
-[node name="AboutButton" type="Button" parent="VBoxContainer/Buttons"]
+[node name="AboutButton" type="Button" parent="Buttons"]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_ow34m")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxFlat_ow34m")
 text = "Sobre"

@@ -2,7 +2,6 @@ extends Control
 
 @export var stage_id:int = 0
 @export var score:int = 0
-@export var enabled:bool = true
 
 @onready var stage_button = $Control/StageButton
 @onready var stars_container:Container = $Stars
@@ -11,13 +10,13 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	label.text = str(stage_id)
-	stage_button.disabled=!enabled
+	enable(false)
+		
+func set_stars(n_stars:int):	
+	for i in range(n_stars):
+		stars[i].disabled = false
+
+func enable(enabled:bool):
+	stage_button.disabled = !enabled
 	label.visible = enabled
 	stars_container.visible = enabled
-	for i in range(stars.size()):
-		stars[i].disabled = !(score > i)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

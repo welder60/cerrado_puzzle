@@ -13,10 +13,6 @@ var threshold := 40.0 # Sensibilidade do arraste
 @onready var textura_rect = $IconeCard
 @onready var fundo:Panel = $ColorRect
 
-@onready var direcao_direita:TextureRect = $SetasMovimento/Direita
-@onready var direcao_esquerda:TextureRect = $SetasMovimento/Esquerda
-@onready var direcao_cima:TextureRect = $SetasMovimento/Cima
-@onready var direcao_baixo:TextureRect = $SetasMovimento/Baixo
 @onready var borda_selecao = $BordaSelecao
 @onready var fundo_match = $FundoMatch
 
@@ -32,7 +28,6 @@ var cores: Array[Color] = [
 	]
 
 func _ready() -> void:
-	_mostrar_direcoes(false)
 	
 	var style = fundo.get_theme_stylebox("panel").duplicate()
 	if style is StyleBoxFlat:
@@ -50,9 +45,7 @@ func _gui_input(event: InputEvent):
 				
 	if is_dragging:
 		if _check_swipe(event.position):
-			is_dragging = false				
-			_mostrar_direcoes(false)
-		_check_direction(event.position)
+			is_dragging = false			
 	borda_selecao.visible = is_dragging
 
 func _check_swipe(end_pos: Vector2) -> bool:
@@ -70,28 +63,7 @@ func _check_swipe(end_pos: Vector2) -> bool:
 	swipe_detected.emit(dir, grid_pos)
 	return true
 
-func _check_direction(end_pos: Vector2):
-	var diff = end_pos - touch_start_pos	
-	if diff.length() < threshold: return
-	_mostrar_direcoes(false)
-	
-	
-	if abs(diff.x) > abs(diff.y):
-		if sign(diff.x)>0:
-			direcao_direita.visible=true
-		else:
-			direcao_esquerda.visible=true
-	else:
-		if sign(diff.y)>0:
-			direcao_baixo.visible=true
-		else:
-			direcao_cima.visible=true
 
-func _mostrar_direcoes(mostrar:bool):
-	direcao_direita.visible = mostrar
-	direcao_esquerda.visible = mostrar
-	direcao_cima.visible = mostrar
-	direcao_baixo.visible = mostrar
 
 func match(matched:bool) -> void:
 	fundo_match.visible = matched

@@ -7,11 +7,11 @@ extends Control
 
 # Referências aos nós principais
 @onready var game_ui = $UIManager/GameUI
-@onready var game_board = $UIManager/GameUI/TopUI/GameBoard
-@onready var score_manager = $ScoreManager
+@onready var game_board = $UIManager/GameUI/GameBoard
 @onready var ui_manager = $UIManager
 @onready var game_stages = $UIManager/GameStages
-@onready var moves_label = $UIManager/GameUI/TopUI/Panel/MarginContainer/HBoxContainer/MovesLabel
+@onready var moves_label = $UIManager/GameUI/MarginContainer/MarginContainer/HBoxContainer/Labels/MovesLabel
+@onready var high_score_label = $UIManager/GameUI/MarginContainer/MarginContainer/HBoxContainer/Labels/HScoreLabel
 
 func _ready():
 	# Conecta os sinais do UIManager
@@ -60,8 +60,9 @@ func _on_rotate_row(row_index: int, direction: int):
 func _on_rotate_col(col_index: int, direction: int):
 	game_board.rotate_column(col_index, direction)
 
-func update_moves(moves: int):
+func update_moves(moves: int,high_score:int):
 	moves_label.text = "Movimentos: %d" % moves
+	high_score_label.text = "Recorde: %d" % high_score
 
 func _on_game_won(moves_count:int):
 	var moves = game_board.moves_count
