@@ -22,6 +22,7 @@ window/size/viewport_width=800
 window/size/viewport_height=1400
 window/size/window_width_override=500
 window/size/window_height_override=600
+window/stretch/mode="viewport"
 window/handheld/orientation=1
 
 [dotnet]

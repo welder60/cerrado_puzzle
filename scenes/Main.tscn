@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ctm5qe5ot5yt7"]
+[gd_scene load_steps=9 format=3 uid="uid://ctm5qe5ot5yt7"]
 
 [ext_resource type="Script" uid="uid://e6k1yd2vkdvn" path="res://scripts/Main.gd" id="1_0bbpv"]
 [ext_resource type="PackedScene" uid="uid://l6e50qovrfld" path="res://scenes/GameUI.tscn" id="2_rvslj"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bog5f2v8caems" path="res://scenes/GameStages.tscn" id="4_nxtc6"]
 [ext_resource type="PackedScene" uid="uid://bdryyu2iknxg1" path="res://scenes/MainMenu.tscn" id="4_vcsgt"]
 [ext_resource type="PackedScene" uid="uid://b36gp54io4kqq" path="res://scenes/VictoryScreen.tscn" id="5_c01mt"]
+[ext_resource type="PackedScene" uid="uid://bim5cvq1doyi1" path="res://scenes/About.tscn" id="7_jlsqs"]
 [ext_resource type="Texture2D" uid="uid://b7bdpc4plpqqn" path="res://assets/backgrounds/game_background.png" id="8_jlsqs"]
 
 [node name="Main" type="Control"]
@@ -33,19 +34,26 @@ theme_override_constants/margin_bottom = 100
 script = ExtResource("4_c01mt")
 
 [node name="MainMenu" parent="UIManager" instance=ExtResource("4_vcsgt")]
+visible = false
 layout_mode = 2
 
 [node name="GameStages" parent="UIManager" instance=ExtResource("4_nxtc6")]
+visible = false
 custom_minimum_size = Vector2(0, 0)
 layout_mode = 2
 
 [node name="VictoryScreen" parent="UIManager" instance=ExtResource("5_c01mt")]
+visible = false
 top_level = true
 z_index = 10
 layout_mode = 2
 color = Color(0.21960784, 0.21960784, 0.21960784, 0.4862745)
 
 [node name="GameUI" parent="UIManager" instance=ExtResource("2_rvslj")]
+visible = false
+layout_mode = 2
+
+[node name="About" parent="UIManager" instance=ExtResource("7_jlsqs")]
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="."]

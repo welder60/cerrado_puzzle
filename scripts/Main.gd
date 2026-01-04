@@ -35,7 +35,6 @@ func _ready():
 	#_on_play_button_pressed()
 
 func _on_stage_selected(stage_id:int):
-	print(stage_id)
 	game_board.load_stage(stage_id)
 	ui_manager.show_game_ui()
 
@@ -62,6 +61,7 @@ func _on_rotate_col(col_index: int, direction: int):
 
 func update_moves(moves: int,high_score:int):
 	moves_label.text = "Movimentos: %d" % moves
+	high_score_label.visible = high_score>0
 	high_score_label.text = "Recorde: %d" % high_score
 
 func _on_game_won(moves_count:int):

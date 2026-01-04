@@ -1,0 +1,780 @@
+[gd_scene load_steps=22 format=3 uid="uid://bim5cvq1doyi1"]
+
+[ext_resource type="StyleBox" uid="uid://bifftooe260b" path="res://assets/styles/window.tres" id="1_2vd4s"]
+[ext_resource type="Texture2D" uid="uid://cclwwyhj1abpq" path="res://assets/info/dia-nacional-do-cerrado-produzindocerto-1280x720-1-600x338.jpg" id="2_8i5if"]
+[ext_resource type="Script" uid="uid://cnxtxblcx6xpq" path="res://scripts/InfoContainer.gd" id="2_li4ei"]
+[ext_resource type="Texture2D" uid="uid://curwjdknapm42" path="res://assets/info/lobo_guara.webp" id="4_wv8np"]
+[ext_resource type="Texture2D" uid="uid://fn45mrfdo4ne" path="res://assets/info/tatu_canastra.webp" id="5_jecps"]
+[ext_resource type="Texture2D" uid="uid://bs0u4pw27f43j" path="res://assets/info/veado_campeiro.jpg" id="6_0go63"]
+[ext_resource type="Texture2D" uid="uid://ca4uth0p5gmpf" path="res://assets/info/seriema.webp" id="7_8al5a"]
+[ext_resource type="Texture2D" uid="uid://d3cvanrb3r74y" path="res://assets/info/capivara.webp" id="8_faqgo"]
+[ext_resource type="Texture2D" uid="uid://bpfm0uhbrpium" path="res://assets/info/tamandua_bandeira.webp" id="9_vphdg"]
+[ext_resource type="Texture2D" uid="uid://ch58x5tg0cvhp" path="res://assets/info/anta.webp" id="10_o0dny"]
+[ext_resource type="Texture2D" uid="uid://iaolpxdc468w" path="res://assets/info/onca.webp" id="11_1agee"]
+[ext_resource type="Texture2D" uid="uid://crftsvf8mwi4a" path="res://assets/info/ema.webp" id="12_i26jq"]
+[ext_resource type="Texture2D" uid="uid://32rawi88df8a" path="res://assets/info/coruja.webp" id="13_lo3tl"]
+
+[sub_resource type="FontVariation" id="FontVariation_w7prh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_as3tu"]
+bg_color = Color(0.84705883, 0.43137255, 0.1254902, 1)
+border_width_bottom = 3
+border_color = Color(0.72156864, 0.3372549, 0.12941177, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.36078432)
+shadow_size = 2
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8pwg6"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="FontFile" id="FontFile_e042l"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/50/0/ascent = 0.0
+cache/0/50/0/descent = 0.0
+cache/0/50/0/underline_position = 0.0
+cache/0/50/0/underline_thickness = 0.0
+cache/0/50/0/scale = 1.0
+cache/0/40/0/ascent = 0.0
+cache/0/40/0/descent = 0.0
+cache/0/40/0/underline_position = 0.0
+cache/0/40/0/underline_thickness = 0.0
+cache/0/40/0/scale = 1.0
+cache/0/70/0/ascent = 0.0
+cache/0/70/0/descent = 0.0
+cache/0/70/0/underline_position = 0.0
+cache/0/70/0/underline_thickness = 0.0
+cache/0/70/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_qrpuq"]
+font_size = 70
+font_color = Color(0.5853204, 0.26653427, 0.111446954, 1)
+stacked_outline_count = 1
+stacked_outline_0/size = 3
+stacked_outline_0/color = Color(0.58431375, 0.26666668, 0.10980392, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tl6ss"]
+font_size = 50
+font_color = Color(0.21960784, 0.31764707, 0.14117648, 1)
+shadow_color = Color(0.21960784, 0.31764707, 0.14117648, 1)
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="FontVariation" id="FontVariation_gpaav"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_li4ei"]
+bg_color = Color(0.3764706, 0.58431375, 0.2901961, 1)
+border_width_bottom = 3
+border_color = Color(0.2784314, 0.4745098, 0.27450982, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.36078432)
+shadow_size = 2
+shadow_offset = Vector2(0, 3)
+
+[node name="PanelContainer" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_2vd4s")
+script = ExtResource("2_li4ei")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="MenuButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_w7prh")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_as3tu")
+action_mode = 0
+text = "Voltar"
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_8pwg6")
+current_tab = 10
+tabs_visible = false
+
+[node name="1_Cerrado" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Titulo" type="Label" parent="VBoxContainer/TabContainer/1_Cerrado"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.23304835, 0.14386132, 0.07313914, 1)
+theme_override_fonts/font = SubResource("FontFile_e042l")
+theme_override_font_sizes/font_size = 70
+text = "O Cerrado"
+label_settings = SubResource("LabelSettings_qrpuq")
+autowrap_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/1_Cerrado"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TabContainer/1_Cerrado/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("2_8i5if")
+stretch_mode = 6
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/TabContainer/1_Cerrado"]
+layout_mode = 2
+size_flags_vertical = 3
+draw_focus_border = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/1_Cerrado/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Conteudo" type="Label" parent="VBoxContainer/TabContainer/1_Cerrado/ScrollContainer/MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.23304835, 0.14386132, 0.07313914, 1)
+theme_override_fonts/font = SubResource("FontFile_e042l")
+theme_override_font_sizes/font_size = 40
+text = "O Cerrado é o segundo maior bioma da América do Sul e ocupa cerca de 22% do território brasileiro. Conhecido como a \"savana mais rica do mundo\" em biodiversidade, ele desempenha um papel crucial no equilíbrio hidrológico do continente, sendo apelidado de \"caixa d'água do Brasil\", pois abriga as nascentes de oito das doze principais bacias hidrográficas do país."
+label_settings = SubResource("LabelSettings_tl6ss")
+autowrap_mode = 2
+
+[node name="2_LoboGuara" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Titulo" type="Label" parent="VBoxContainer/TabContainer/2_LoboGuara"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.23304835, 0.14386132, 0.07313914, 1)
+theme_override_fonts/font = SubResource("FontFile_e042l")
+theme_override_font_sizes/font_size = 70
+text = "Lobo-Guará"
+label_settings = SubResource("LabelSettings_qrpuq")
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/2_LoboGuara"]
+layout_mode = 2
+text = " (Chrysocyon brachyurus)"
+label_settings = SubResource("LabelSettings_tl6ss")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/2_LoboGuara"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TabContainer/2_LoboGuara/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("4_wv8np")
+stretch_mode = 6
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/TabContainer/2_LoboGuara"]
+layout_mode = 2
+size_flags_vertical = 3
+draw_focus_border = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/2_LoboGuara/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Conteudo" type="Label" parent="VBoxContainer/TabContainer/2_LoboGuara/ScrollContainer/MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.23304835, 0.14386132, 0.07313914, 1)
+theme_override_fonts/font = SubResource("FontFile_e042l")
+theme_override_font_sizes/font_size = 40
+text = "O maior e mais icônico canídeo da América do Sul, sendo o símbolo máximo do Cerrado brasileiro. Apesar do nome, ele não é propriamente um lobo nem uma raposa, mas uma espécie única que evoluiu para se adaptar às gramíneas altas das savanas sul-americanas."
+label_settings = SubResource("LabelSettings_tl6ss")
+autowrap_mode = 2
+
+[node name="3_TatuCanastra" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="Titulo" type="Label" parent="VBoxContainer/TabContainer/3_TatuCanastra"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.23304835, 0.14386132, 0.07313914, 1)
+theme_override_fonts/font = SubResource("FontFile_e042l")
+theme_override_font_sizes/font_size = 70
+text = "Tatu-canastra"
+label_settings = SubResource("LabelSettings_qrpuq")
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/3_TatuCanastra"]
+layout_mode = 2
+text = "(Priodontes maximus)"
+label_settings = SubResource("LabelSettings_tl6ss")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/3_TatuCanastra"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TabContainer/3_TatuCanastra/MarginContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+texture = ExtResource("5_jecps")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/TabContainer/3_TatuCanastra"]
+layout_mode = 2
+size_flags_vertical = 3
+draw_focus_border = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/3_TatuCanastra/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Conteudo" type="Label" parent="VBoxContainer/TabContainer/3_TatuCanastra/ScrollContainer/MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.23304835, 0.14386132, 0.07313914, 1)
+theme_override_fonts/font = SubResource("FontFile_e042l")
+theme_override_font_sizes/font_size = 40
+text = "O maior tatu do mundo, podendo atingir 1,5 metro e pesar até 60 kg. É considerado um \"engenheiro do ecossistema\" por construir tocas profundas (até 6 metros) que servem de refúgio térmico e abrigo para mais de 70 outras espécies."
+label_settings = SubResource("LabelSettings_tl6ss")
+autowrap_mode = 2
+
+[node name="4_VeadoCampeiro" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="Titulo" type="Label" parent="VBoxContainer/TabContainer/4_VeadoCampeiro"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.23304835, 0.14386132, 0.07313914, 1)
+theme_override_fonts/font = SubResource("FontFile_e042l")
+theme_override_font_sizes/font_size = 70
+text = "Veado-Campeiro"
+label_settings = SubResource("LabelSettings_qrpuq")
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/4_VeadoCampeiro"]
+layout_mode = 2
+text = "(Ozotoceros bezoarticus)"
+label_settings = SubResource("LabelSettings_tl6ss")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/4_VeadoCampeiro"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TabContainer/4_VeadoCampeiro/MarginContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+texture = ExtResource("6_0go63")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/TabContainer/4_VeadoCampeiro"]
+layout_mode = 2
+size_flags_vertical = 3
+draw_focus_border = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/4_VeadoCampeiro/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Conteudo" type="Label" parent="VBoxContainer/TabContainer/4_VeadoCampeiro/ScrollContainer/MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.23304835, 0.14386132, 0.07313914, 1)
+theme_override_fonts/font = SubResource("FontFile_e042l")
+theme_override_font_sizes/font_size = 40
+text = "é um dos cervídeos mais emblemáticos da América do Sul e um símbolo vivo das paisagens abertas do Cerrado e dos Pampas.
+Diferente de outros cervos que preferem matas densas, o campeiro evoluiu para viver em campos limpos, onde sua visão aguçada e sua velocidade são as principais defesas contra predadores."
+label_settings = SubResource("LabelSettings_tl6ss")
+autowrap_mode = 2
+
+[node name="5_Seriema" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 4
+
+[node name="Titulo" type="Label" parent="VBoxContainer/TabContainer/5_Seriema"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.23304835, 0.14386132, 0.07313914, 1)
+theme_override_fonts/font = SubResource("FontFile_e042l")
+theme_override_font_sizes/font_size = 70
+text = "Seriema"
+label_settings = SubResource("LabelSettings_qrpuq")
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/5_Seriema"]
+layout_mode = 2
+text = "(Cariama cristata)"
+label_settings = SubResource("LabelSettings_tl6ss")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/5_Seriema"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TabContainer/5_Seriema/MarginContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+texture = ExtResource("7_8al5a")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/TabContainer/5_Seriema"]
+layout_mode = 2
+size_flags_vertical = 3
+draw_focus_border = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/5_Seriema/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Conteudo" type="Label" parent="VBoxContainer/TabContainer/5_Seriema/ScrollContainer/MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.23304835, 0.14386132, 0.07313914, 1)
+theme_override_fonts/font = SubResource("FontFile_e042l")
+theme_override_font_sizes/font_size = 40
+text = "A Seriema é conhecida por seu porte elegante e seu canto potente que pode ser ouvido a quilômetros de distância. Ela é uma das poucas descendentes vivas das antigas \"aves do terror\" que dominaram a América do Sul há milhões de anos."
+label_settings = SubResource("LabelSettings_tl6ss")
+autowrap_mode = 2
+
+[node name="6_Capivara" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 5
+
+[node name="Titulo" type="Label" parent="VBoxContainer/TabContainer/6_Capivara"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.23304835, 0.14386132, 0.07313914, 1)
+theme_override_fonts/font = SubResource("FontFile_e042l")
+theme_override_font_sizes/font_size = 70
+text = "Capivara "
+label_settings = SubResource("LabelSettings_qrpuq")
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/6_Capivara"]
+layout_mode = 2
+text = "(Hydrochoerus hydrochaeris) "
+label_settings = SubResource("LabelSettings_tl6ss")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/6_Capivara"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TabContainer/6_Capivara/MarginContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+texture = ExtResource("8_faqgo")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/TabContainer/6_Capivara"]
+layout_mode = 2
+size_flags_vertical = 3
+draw_focus_border = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/6_Capivara/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Conteudo" type="Label" parent="VBoxContainer/TabContainer/6_Capivara/ScrollContainer/MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.23304835, 0.14386132, 0.07313914, 1)
+theme_override_fonts/font = SubResource("FontFile_e042l")
+theme_override_font_sizes/font_size = 40
+text = "O maior roedor do mundo e uma figura icônica nas paisagens brasileiras. Embora seja frequentemente associada ao Pantanal ou a parques urbanos, ela desempenha um papel fundamental no ecossistema do Cerrado."
+label_settings = SubResource("LabelSettings_tl6ss")
+autowrap_mode = 2
+
+[node name="7_Tamandua" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 6
+
+[node name="Titulo" type="Label" parent="VBoxContainer/TabContainer/7_Tamandua"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.23304835, 0.14386132, 0.07313914, 1)
+theme_override_fonts/font = SubResource("FontFile_e042l")
+theme_override_font_sizes/font_size = 70
+text = "Tamanduá-Bandeira"
+label_settings = SubResource("LabelSettings_qrpuq")
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/7_Tamandua"]
+layout_mode = 2
+text = "(Myrmecophaga tridactyla)"
+label_settings = SubResource("LabelSettings_tl6ss")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/7_Tamandua"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TabContainer/7_Tamandua/MarginContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+texture = ExtResource("9_vphdg")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/TabContainer/7_Tamandua"]
+layout_mode = 2
+size_flags_vertical = 3
+draw_focus_border = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/7_Tamandua/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Conteudo" type="Label" parent="VBoxContainer/TabContainer/7_Tamandua/ScrollContainer/MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.23304835, 0.14386132, 0.07313914, 1)
+theme_override_fonts/font = SubResource("FontFile_e042l")
+theme_override_font_sizes/font_size = 40
+text = "Com um focinho longo e cilíndrico, ele utiliza uma língua extensível e pegajosa para capturar milhares de insetos diariamente, enquanto suas garras potentes servem tanto para escavar formigueiros quanto para defesa pessoal."
+label_settings = SubResource("LabelSettings_tl6ss")
+autowrap_mode = 2
+
+[node name="8_Anta" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 7
+
+[node name="Titulo" type="Label" parent="VBoxContainer/TabContainer/8_Anta"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.23304835, 0.14386132, 0.07313914, 1)
+theme_override_fonts/font = SubResource("FontFile_e042l")
+theme_override_font_sizes/font_size = 70
+text = "Anta"
+label_settings = SubResource("LabelSettings_qrpuq")
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/8_Anta"]
+layout_mode = 2
+text = "(Tapirus terrestris)"
+label_settings = SubResource("LabelSettings_tl6ss")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/8_Anta"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TabContainer/8_Anta/MarginContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+texture = ExtResource("10_o0dny")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/TabContainer/8_Anta"]
+layout_mode = 2
+size_flags_vertical = 3
+draw_focus_border = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/8_Anta/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Conteudo" type="Label" parent="VBoxContainer/TabContainer/8_Anta/ScrollContainer/MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.23304835, 0.14386132, 0.07313914, 1)
+theme_override_fonts/font = SubResource("FontFile_e042l")
+theme_override_font_sizes/font_size = 40
+text = "A Anta é o maior mamífero terrestre da América do Sul, desempenhando um papel vital na manutenção dos ecossistemas onde habita. Conhecida como a \"jardineira das florestas\", ela possui a capacidade única de dispersar sementes de grande porte através de suas fezes, o que auxilia na regeneração da flora nativa e na diversidade vegetal."
+label_settings = SubResource("LabelSettings_tl6ss")
+autowrap_mode = 2
+
+[node name="9_onca" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 8
+
+[node name="Titulo" type="Label" parent="VBoxContainer/TabContainer/9_onca"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.23304835, 0.14386132, 0.07313914, 1)
+theme_override_fonts/font = SubResource("FontFile_e042l")
+theme_override_font_sizes/font_size = 70
+text = "Onça-Pintada"
+label_settings = SubResource("LabelSettings_qrpuq")
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/9_onca"]
+layout_mode = 2
+text = "(Panthera onca)"
+label_settings = SubResource("LabelSettings_tl6ss")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/9_onca"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TabContainer/9_onca/MarginContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+texture = ExtResource("11_1agee")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/TabContainer/9_onca"]
+layout_mode = 2
+size_flags_vertical = 3
+draw_focus_border = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/9_onca/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Conteudo" type="Label" parent="VBoxContainer/TabContainer/9_onca/ScrollContainer/MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.23304835, 0.14386132, 0.07313914, 1)
+theme_override_fonts/font = SubResource("FontFile_e042l")
+theme_override_font_sizes/font_size = 40
+text = "A onça-pintada ocupa o topo da cadeia alimentar no Cerrado, desempenhando um papel fundamental no equilíbrio ecológico ao regular as populações de suas presas naturais, como antas e capivaras."
+label_settings = SubResource("LabelSettings_tl6ss")
+autowrap_mode = 2
+
+[node name="10_ema" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 9
+
+[node name="Titulo" type="Label" parent="VBoxContainer/TabContainer/10_ema"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.23304835, 0.14386132, 0.07313914, 1)
+theme_override_fonts/font = SubResource("FontFile_e042l")
+theme_override_font_sizes/font_size = 70
+text = "Ema"
+label_settings = SubResource("LabelSettings_qrpuq")
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/10_ema"]
+layout_mode = 2
+text = "(Rhea americana)"
+label_settings = SubResource("LabelSettings_tl6ss")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/10_ema"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TabContainer/10_ema/MarginContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+texture = ExtResource("12_i26jq")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/TabContainer/10_ema"]
+layout_mode = 2
+size_flags_vertical = 3
+draw_focus_border = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/10_ema/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Conteudo" type="Label" parent="VBoxContainer/TabContainer/10_ema/ScrollContainer/MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.23304835, 0.14386132, 0.07313914, 1)
+theme_override_fonts/font = SubResource("FontFile_e042l")
+theme_override_font_sizes/font_size = 40
+text = "A ema desempenha um papel ecológico fundamental nas vastas extensões de campos limpos e matas do Cerrado, sendo reconhecida como a maior e mais pesada ave nativa do continente sul-americano. Por ser uma espécie generalista e de grande mobilidade, ela atua como uma jardineira natural do bioma, dispersando sementes de diversas plantas nativas através de sua dieta variada, que inclui frutos, insetos e pequenos animais."
+label_settings = SubResource("LabelSettings_tl6ss")
+autowrap_mode = 2
+
+[node name="11_coruja" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 10
+
+[node name="Titulo" type="Label" parent="VBoxContainer/TabContainer/11_coruja"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.23304835, 0.14386132, 0.07313914, 1)
+theme_override_fonts/font = SubResource("FontFile_e042l")
+theme_override_font_sizes/font_size = 70
+text = "Coruja-Buraqueira"
+label_settings = SubResource("LabelSettings_qrpuq")
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/11_coruja"]
+layout_mode = 2
+text = "(Athene cunicularia)"
+label_settings = SubResource("LabelSettings_tl6ss")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/11_coruja"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TabContainer/11_coruja/MarginContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+texture = ExtResource("13_lo3tl")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/TabContainer/11_coruja"]
+layout_mode = 2
+size_flags_vertical = 3
+draw_focus_border = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/11_coruja/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Conteudo" type="Label" parent="VBoxContainer/TabContainer/11_coruja/ScrollContainer/MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.23304835, 0.14386132, 0.07313914, 1)
+theme_override_fonts/font = SubResource("FontFile_e042l")
+theme_override_font_sizes/font_size = 40
+text = "A coruja-buraqueira é uma das sentinelas mais vigilantes das paisagens abertas do Cerrado. Ao contrário de muitos de seus parentes, ela possui o hábito singular de habitar buracos no solo e manter-se ativa durante o dia, vigiando o horizonte a partir de cupinzeiros ou galhos baixos."
+label_settings = SubResource("LabelSettings_tl6ss")
+autowrap_mode = 2
+
+[node name="TabsControl" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Anterior" type="Button" parent="VBoxContainer/TabsControl"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_gpaav")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_li4ei")
+text = "Anterior"
+
+[node name="Proximo" type="Button" parent="VBoxContainer/TabsControl"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_gpaav")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_li4ei")
+text = "Seguinte"
+
+[node name="Inicio" type="Button" parent="VBoxContainer/TabsControl"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_gpaav")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_li4ei")
+text = "Início"
