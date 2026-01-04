@@ -14,8 +14,9 @@ signal menu_button_pressed
 @onready var victory_screen = $VictoryScreen
 @onready var game_stages = $GameStages
 @onready var about_container = $About
+@onready var htp_container = $HowToPlay
 
-@onready var scenes:Array[Control] = [main_menu,game_ui,victory_screen,game_stages,about_container]
+@onready var scenes:Array[Control] = [main_menu,game_ui,victory_screen,game_stages,about_container,htp_container]
 
 @onready var victory_moves_label = $VictoryScreen/PanelContainer/VBoxContainer/MovesLabel
 @onready var new_highscore_label = $VictoryScreen/PanelContainer/VBoxContainer/HighscoreMessage
@@ -26,6 +27,7 @@ func _ready():
 	# Menu Principal
 	main_menu.get_node("VBoxContainer/CenterContainer/FirstMenu/Buttons/PlayButton").pressed.connect(_on_PlayButton_pressed)
 	main_menu.get_node("VBoxContainer/CenterContainer/FirstMenu/Buttons/AboutButton").pressed.connect(show_about)
+	main_menu.get_node("VBoxContainer/CenterContainer/FirstMenu/Buttons/HTPButton").pressed.connect(show_htp)
 		
 		# UI do Jogo
 	game_ui.get_node("MarginContainer/MarginContainer/HBoxContainer/Buttons/ResetButton").pressed.connect(_on_ResetButton_pressed)
@@ -38,6 +40,7 @@ func _ready():
 	victory_screen.get_node("PanelContainer/VBoxContainer/ActionButtons/ContinueButton").pressed.connect(_on_PlayButton_pressed)
 
 	about_container.get_node("VBoxContainer/HBoxContainer/MenuButton").pressed.connect(_on_MenuButton_pressed)
+	htp_container.get_node("VBoxContainer/HBoxContainer/MenuButton").pressed.connect(_on_MenuButton_pressed)
 	# Estado inicial: mostrar apenas o menu principal
 	show_main_menu()
 
@@ -68,6 +71,10 @@ func show_victory_screen():
 func show_about():
 	hide_all()
 	show_scene(about_container)
+	
+func show_htp():
+	hide_all()
+	show_scene(htp_container)
 	
 
 

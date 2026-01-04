@@ -124,11 +124,10 @@ custom_minimum_size = Vector2(0, 500)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_8pwg6")
-current_tab = 10
+current_tab = 0
 tabs_visible = false
 
 [node name="1_Cerrado" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -690,6 +689,7 @@ label_settings = SubResource("LabelSettings_tl6ss")
 autowrap_mode = 2
 
 [node name="11_coruja" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 10
 
