@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://l6e50qovrfld"]
+[gd_scene load_steps=11 format=3 uid="uid://l6e50qovrfld"]
 
 [ext_resource type="Script" uid="uid://c8325d8qf1bvf" path="res://scripts/GameBoard.gd" id="1_rs3te"]
 [ext_resource type="PackedScene" uid="uid://df0thsjlco4v2" path="res://scenes/Card.tscn" id="3_4s3j0"]
+[ext_resource type="AudioStream" uid="uid://dx2v4pv24a0xu" path="res://assets/sfx/movement-swipe-whoosh-3-186577.mp3" id="3_7ro0d"]
 [ext_resource type="Texture2D" uid="uid://dstb3e6y0tq8p" path="res://assets/images/image_7.png" id="3_rs3te"]
+[ext_resource type="AudioStream" uid="uid://dv04bg563onqh" path="res://assets/sfx/coin-collision-sound-342335.mp3" id="4_7ro0d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rs3te"]
 bg_color = Color(0.3882353, 0.28235295, 0.21176471, 1)
@@ -142,6 +144,14 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_rs3te")
 script = ExtResource("1_rs3te")
 card_scene = ExtResource("3_4s3j0")
 layout_grid = NodePath("GridContainer")
+
+[node name="Swipe" type="AudioStreamPlayer2D" parent="GameBoard"]
+position = Vector2(-287, -690)
+stream = ExtResource("3_7ro0d")
+
+[node name="Win" type="AudioStreamPlayer2D" parent="GameBoard"]
+position = Vector2(-287, -690)
+stream = ExtResource("4_7ro0d")
 
 [node name="GridContainer" type="GridContainer" parent="GameBoard"]
 layout_mode = 2

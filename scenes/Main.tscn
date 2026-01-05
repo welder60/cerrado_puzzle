@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ctm5qe5ot5yt7"]
+[gd_scene load_steps=13 format=3 uid="uid://ctm5qe5ot5yt7"]
 
 [ext_resource type="Script" uid="uid://e6k1yd2vkdvn" path="res://scripts/Main.gd" id="1_0bbpv"]
 [ext_resource type="PackedScene" uid="uid://l6e50qovrfld" path="res://scenes/GameUI.tscn" id="2_rvslj"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://b7bdpc4plpqqn" path="res://assets/backgrounds/game_background.png" id="8_jlsqs"]
 [ext_resource type="PackedScene" uid="uid://bf7v4gmi1ohro" path="res://scenes/Config.tscn" id="9_lhr70"]
 [ext_resource type="PackedScene" uid="uid://bbf7pqmbrm00s" path="res://scenes/Confirmation.tscn" id="10_wp0k4"]
+[ext_resource type="AudioStream" uid="uid://eo7tfv2o2ulo" path="res://assets/sfx/grozkaiz5-90375.mp3" id="11_bjd11"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -72,6 +73,10 @@ confirmation = NodePath("../Confirmation")
 visible = false
 z_index = 10
 layout_mode = 2
+
+[node name="ClickSFX" type="AudioStreamPlayer2D" parent="UIManager"]
+stream = ExtResource("11_bjd11")
+pitch_scale = 4.0
 
 [node name="TextureRect" type="TextureRect" parent="."]
 show_behind_parent = true

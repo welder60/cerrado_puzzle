@@ -4,6 +4,9 @@ extends PanelContainer # Mudamos para Control para gerenciar a árvore intername
 signal game_won(moves_count: int)
 signal moves_updated(moves_count: int,record_moves: int)
 
+@onready var swap_sfx = $Swipe
+@onready var win_sfx = $Win
+
 @export var card_scene: PackedScene
 @export var card_padding: int = 10
 @export var margin_padding: int = 100
@@ -230,6 +233,7 @@ func rotate_column(x: int, dir: int) -> void:
 	_post_move_check()             # Verifica se o jogador venceu
 
 func _animate_cards() -> void:
+	swap_sfx.play()
 	var tween = create_tween().set_parallel(true).set_trans(Tween.TRANS_CUBIC)
 	for y in range(rows):
 		for x in range(cols):
@@ -275,6 +279,7 @@ func _check_win_condition() -> bool:
 	return all_match
 
 func _handle_victory() -> void:
+	win_sfx.play()
 	var result = score_manager.update_stage_result(_stage_id,moves_count,2)
 	
 	if result["new_stars"]:

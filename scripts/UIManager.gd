@@ -18,6 +18,8 @@ signal menu_button_pressed
 @onready var config_container = $Config
 @onready var confirmation = $Confirmation
 
+@onready var click_sfx = $ClickSFX
+
 @onready var scenes:Array[Control] = [main_menu,game_ui,victory_screen,game_stages,about_container,htp_container,config_container,confirmation]
 
 @onready var victory_moves_label = $VictoryScreen/PanelContainer/VBoxContainer/MovesLabel
@@ -51,6 +53,7 @@ func _ready():
 # --- Funções de Visibilidade ---
 
 func hide_all():
+	click_sfx.play()
 	for scene in scenes:
 		scene.hide()
 	

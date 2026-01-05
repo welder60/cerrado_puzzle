@@ -24,9 +24,10 @@ func update_stages():
 	stages[0].enable(true)
 	for stage in stages:
 		var stage_score = score_manager.get_stage_info(stage.stage_id)
-		if stage_score["moves"]>0:
-			stages[stage.stage_id].enable(true)
+		if stage_score["moves"]>0:			
 			stage.set_stars(stage_score["stars"])
+			if stages.size()>stage.stage_id:
+				stages[stage.stage_id].enable(true)
 func create_stage(id:int) -> Control:
 	var stage = stage_scene.instantiate()
 	stage.stage_id = id
