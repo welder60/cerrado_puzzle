@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://dlgu2hyaibejw"]
+[gd_scene load_steps=14 format=3 uid="uid://dlgu2hyaibejw"]
 
 [ext_resource type="StyleBox" uid="uid://bifftooe260b" path="res://assets/styles/window.tres" id="1_6dy36"]
 [ext_resource type="Script" uid="uid://cnxtxblcx6xpq" path="res://scripts/InfoContainer.gd" id="2_iqfql"]
 [ext_resource type="Texture2D" uid="uid://cs2pew358ka64" path="res://assets/tutorial/controles.jpg" id="3_7wksh"]
 [ext_resource type="Texture2D" uid="uid://dpfmsg2ju00gc" path="res://assets/tutorial/pares.jpg" id="4_uxq4p"]
 [ext_resource type="Texture2D" uid="uid://cxy0a1fapkgue" path="res://assets/tutorial/jogo concluido.jpg" id="5_1ul6c"]
+[ext_resource type="Texture2D" uid="uid://colmpeisnecaj" path="res://assets/tutorial/orientacao pares.jpg" id="5_uxq4p"]
 
 [sub_resource type="FontVariation" id="FontVariation_w7prh"]
 
@@ -85,15 +86,22 @@ grow_vertical = 2
 theme_override_styles/panel = ExtResource("1_6dy36")
 script = ExtResource("2_iqfql")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 40
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 alignment = 2
 
-[node name="MenuButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="MenuButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(300, 80)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -104,20 +112,19 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_as3tu")
 action_mode = 0
 text = "Voltar"
 
-[node name="TabContainer" type="TabContainer" parent="VBoxContainer"]
+[node name="TabContainer" type="TabContainer" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 500)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_8pwg6")
-current_tab = 2
+current_tab = 0
 tabs_visible = false
 
-[node name="pagina_1" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
-visible = false
+[node name="pagina_1" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/pagina_1"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/pagina_1"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 50
@@ -125,40 +132,40 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TabContainer/pagina_1/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/pagina_1/MarginContainer"]
 layout_mode = 2
 texture = ExtResource("3_7wksh")
 expand_mode = 5
 stretch_mode = 6
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/TabContainer/pagina_1"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/pagina_1"]
 layout_mode = 2
 size_flags_vertical = 3
 draw_focus_border = true
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/pagina_1/ScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/pagina_1/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Conteudo" type="Label" parent="VBoxContainer/TabContainer/pagina_1/ScrollContainer/MarginContainer"]
+[node name="Conteudo" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/pagina_1/ScrollContainer/MarginContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.23304835, 0.14386132, 0.07313914, 1)
 theme_override_fonts/font = SubResource("FontFile_e042l")
 theme_override_font_sizes/font_size = 40
-text = "tutotial"
+text = "Mova as colunas ou linhas para mudar o quebra-cabeças."
 label_settings = SubResource("LabelSettings_tl6ss")
 autowrap_mode = 2
 
-[node name="pagina_2" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+[node name="pagina_2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/pagina_2"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/pagina_2"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 50
@@ -166,39 +173,40 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TabContainer/pagina_2/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/pagina_2/MarginContainer"]
 layout_mode = 2
 texture = ExtResource("4_uxq4p")
 expand_mode = 5
 stretch_mode = 6
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/TabContainer/pagina_2"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/pagina_2"]
 layout_mode = 2
 size_flags_vertical = 3
 draw_focus_border = true
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/pagina_2/ScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/pagina_2/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Conteudo" type="Label" parent="VBoxContainer/TabContainer/pagina_2/ScrollContainer/MarginContainer"]
+[node name="Conteudo" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/pagina_2/ScrollContainer/MarginContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.23304835, 0.14386132, 0.07313914, 1)
 theme_override_fonts/font = SubResource("FontFile_e042l")
 theme_override_font_sizes/font_size = 40
-text = "tutotial"
+text = "Forme pares de animais iguais."
 label_settings = SubResource("LabelSettings_tl6ss")
 autowrap_mode = 2
 
-[node name="pagina_3" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+[node name="pagina_3" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/pagina_3"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/pagina_3"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 50
@@ -206,39 +214,80 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TabContainer/pagina_3/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/pagina_3/MarginContainer"]
 layout_mode = 2
-texture = ExtResource("5_1ul6c")
+texture = ExtResource("5_uxq4p")
 expand_mode = 5
 stretch_mode = 6
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/TabContainer/pagina_3"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/pagina_3"]
 layout_mode = 2
 size_flags_vertical = 3
 draw_focus_border = true
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/pagina_3/ScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/pagina_3/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Conteudo" type="Label" parent="VBoxContainer/TabContainer/pagina_3/ScrollContainer/MarginContainer"]
+[node name="Conteudo" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/pagina_3/ScrollContainer/MarginContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.23304835, 0.14386132, 0.07313914, 1)
 theme_override_fonts/font = SubResource("FontFile_e042l")
 theme_override_font_sizes/font_size = 40
-text = "tutotial"
+text = "Os pares podem ser na vertical ou horizontal."
 label_settings = SubResource("LabelSettings_tl6ss")
 autowrap_mode = 2
 
-[node name="TabsControl" type="HBoxContainer" parent="VBoxContainer"]
+[node name="pagina_4" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/pagina_4"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/pagina_4/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("5_1ul6c")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/pagina_4"]
+layout_mode = 2
+size_flags_vertical = 3
+draw_focus_border = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/pagina_4/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Conteudo" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/pagina_4/ScrollContainer/MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.23304835, 0.14386132, 0.07313914, 1)
+theme_override_fonts/font = SubResource("FontFile_e042l")
+theme_override_font_sizes/font_size = 40
+text = "Você vence o jogo quando forma todos os pares."
+label_settings = SubResource("LabelSettings_tl6ss")
+autowrap_mode = 2
+
+[node name="TabsControl" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="Anterior" type="Button" parent="VBoxContainer/TabsControl"]
+[node name="Anterior" type="Button" parent="MarginContainer/VBoxContainer/TabsControl"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -248,7 +297,7 @@ theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxFlat_li4ei")
 text = "Anterior"
 
-[node name="Proximo" type="Button" parent="VBoxContainer/TabsControl"]
+[node name="Proximo" type="Button" parent="MarginContainer/VBoxContainer/TabsControl"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -258,7 +307,7 @@ theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxFlat_li4ei")
 text = "Seguinte"
 
-[node name="Inicio" type="Button" parent="VBoxContainer/TabsControl"]
+[node name="Inicio" type="Button" parent="MarginContainer/VBoxContainer/TabsControl"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3

@@ -92,23 +92,38 @@ shadow_size = 2
 shadow_offset = Vector2(0, 3)
 
 [node name="PanelContainer" type="PanelContainer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -401.5
+offset_top = -408.0
+offset_right = 401.5
+offset_bottom = 408.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_vertical = 4
 theme_override_styles/panel = ExtResource("1_2vd4s")
 script = ExtResource("2_li4ei")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
 theme_override_constants/separation = 40
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 alignment = 2
 
-[node name="MenuButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="MenuButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(300, 80)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -119,19 +134,18 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_as3tu")
 action_mode = 0
 text = "Voltar"
 
-[node name="TabContainer" type="TabContainer" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 500)
+[node name="TabContainer" type="TabContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_8pwg6")
-current_tab = 0
+current_tab = 1
 tabs_visible = false
 
-[node name="1_Cerrado" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+[node name="1_Cerrado" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="Titulo" type="Label" parent="VBoxContainer/TabContainer/1_Cerrado"]
+[node name="Titulo" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/1_Cerrado"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -142,30 +156,31 @@ text = "O Cerrado"
 label_settings = SubResource("LabelSettings_qrpuq")
 autowrap_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/1_Cerrado"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/1_Cerrado"]
 layout_mode = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TabContainer/1_Cerrado/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/1_Cerrado/MarginContainer"]
 layout_mode = 2
 texture = ExtResource("2_8i5if")
 stretch_mode = 6
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/TabContainer/1_Cerrado"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/1_Cerrado"]
+custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 size_flags_vertical = 3
 draw_focus_border = true
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/1_Cerrado/ScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/1_Cerrado/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Conteudo" type="Label" parent="VBoxContainer/TabContainer/1_Cerrado/ScrollContainer/MarginContainer"]
+[node name="Conteudo" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/1_Cerrado/ScrollContainer/MarginContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -176,12 +191,11 @@ text = "O Cerrado é o segundo maior bioma da América do Sul e ocupa cerca de 2
 label_settings = SubResource("LabelSettings_tl6ss")
 autowrap_mode = 2
 
-[node name="2_LoboGuara" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
-visible = false
+[node name="2_LoboGuara" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="Titulo" type="Label" parent="VBoxContainer/TabContainer/2_LoboGuara"]
+[node name="Titulo" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/2_LoboGuara"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -192,35 +206,36 @@ text = "Lobo-Guará"
 label_settings = SubResource("LabelSettings_qrpuq")
 autowrap_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/TabContainer/2_LoboGuara"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/2_LoboGuara"]
 layout_mode = 2
 text = " (Chrysocyon brachyurus)"
 label_settings = SubResource("LabelSettings_tl6ss")
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/2_LoboGuara"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/2_LoboGuara"]
 layout_mode = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TabContainer/2_LoboGuara/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/2_LoboGuara/MarginContainer"]
 layout_mode = 2
 texture = ExtResource("4_wv8np")
 stretch_mode = 6
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/TabContainer/2_LoboGuara"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/2_LoboGuara"]
+custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 size_flags_vertical = 3
 draw_focus_border = true
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/2_LoboGuara/ScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/2_LoboGuara/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Conteudo" type="Label" parent="VBoxContainer/TabContainer/2_LoboGuara/ScrollContainer/MarginContainer"]
+[node name="Conteudo" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/2_LoboGuara/ScrollContainer/MarginContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -231,12 +246,12 @@ text = "O maior e mais icônico canídeo da América do Sul, sendo o símbolo m�
 label_settings = SubResource("LabelSettings_tl6ss")
 autowrap_mode = 2
 
-[node name="3_TatuCanastra" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+[node name="3_TatuCanastra" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
-[node name="Titulo" type="Label" parent="VBoxContainer/TabContainer/3_TatuCanastra"]
+[node name="Titulo" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/3_TatuCanastra"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -247,37 +262,38 @@ text = "Tatu-canastra"
 label_settings = SubResource("LabelSettings_qrpuq")
 autowrap_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/TabContainer/3_TatuCanastra"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/3_TatuCanastra"]
 layout_mode = 2
 text = "(Priodontes maximus)"
 label_settings = SubResource("LabelSettings_tl6ss")
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/3_TatuCanastra"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/3_TatuCanastra"]
 layout_mode = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TabContainer/3_TatuCanastra/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/3_TatuCanastra/MarginContainer"]
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 texture = ExtResource("5_jecps")
 expand_mode = 3
 stretch_mode = 6
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/TabContainer/3_TatuCanastra"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/3_TatuCanastra"]
+custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 size_flags_vertical = 3
 draw_focus_border = true
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/3_TatuCanastra/ScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/3_TatuCanastra/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Conteudo" type="Label" parent="VBoxContainer/TabContainer/3_TatuCanastra/ScrollContainer/MarginContainer"]
+[node name="Conteudo" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/3_TatuCanastra/ScrollContainer/MarginContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -288,12 +304,12 @@ text = "O maior tatu do mundo, podendo atingir 1,5 metro e pesar até 60 kg. É 
 label_settings = SubResource("LabelSettings_tl6ss")
 autowrap_mode = 2
 
-[node name="4_VeadoCampeiro" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+[node name="4_VeadoCampeiro" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 3
 
-[node name="Titulo" type="Label" parent="VBoxContainer/TabContainer/4_VeadoCampeiro"]
+[node name="Titulo" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/4_VeadoCampeiro"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -304,37 +320,38 @@ text = "Veado-Campeiro"
 label_settings = SubResource("LabelSettings_qrpuq")
 autowrap_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/TabContainer/4_VeadoCampeiro"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/4_VeadoCampeiro"]
 layout_mode = 2
 text = "(Ozotoceros bezoarticus)"
 label_settings = SubResource("LabelSettings_tl6ss")
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/4_VeadoCampeiro"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/4_VeadoCampeiro"]
 layout_mode = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TabContainer/4_VeadoCampeiro/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/4_VeadoCampeiro/MarginContainer"]
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 texture = ExtResource("6_0go63")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/TabContainer/4_VeadoCampeiro"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/4_VeadoCampeiro"]
+custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 size_flags_vertical = 3
 draw_focus_border = true
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/4_VeadoCampeiro/ScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/4_VeadoCampeiro/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Conteudo" type="Label" parent="VBoxContainer/TabContainer/4_VeadoCampeiro/ScrollContainer/MarginContainer"]
+[node name="Conteudo" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/4_VeadoCampeiro/ScrollContainer/MarginContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -346,12 +363,12 @@ Diferente de outros cervos que preferem matas densas, o campeiro evoluiu para vi
 label_settings = SubResource("LabelSettings_tl6ss")
 autowrap_mode = 2
 
-[node name="5_Seriema" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+[node name="5_Seriema" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 4
 
-[node name="Titulo" type="Label" parent="VBoxContainer/TabContainer/5_Seriema"]
+[node name="Titulo" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/5_Seriema"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -362,37 +379,38 @@ text = "Seriema"
 label_settings = SubResource("LabelSettings_qrpuq")
 autowrap_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/TabContainer/5_Seriema"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/5_Seriema"]
 layout_mode = 2
 text = "(Cariama cristata)"
 label_settings = SubResource("LabelSettings_tl6ss")
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/5_Seriema"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/5_Seriema"]
 layout_mode = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TabContainer/5_Seriema/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/5_Seriema/MarginContainer"]
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 texture = ExtResource("7_8al5a")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/TabContainer/5_Seriema"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/5_Seriema"]
+custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 size_flags_vertical = 3
 draw_focus_border = true
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/5_Seriema/ScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/5_Seriema/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Conteudo" type="Label" parent="VBoxContainer/TabContainer/5_Seriema/ScrollContainer/MarginContainer"]
+[node name="Conteudo" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/5_Seriema/ScrollContainer/MarginContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -403,12 +421,12 @@ text = "A Seriema é conhecida por seu porte elegante e seu canto potente que po
 label_settings = SubResource("LabelSettings_tl6ss")
 autowrap_mode = 2
 
-[node name="6_Capivara" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+[node name="6_Capivara" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 5
 
-[node name="Titulo" type="Label" parent="VBoxContainer/TabContainer/6_Capivara"]
+[node name="Titulo" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/6_Capivara"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -419,37 +437,38 @@ text = "Capivara "
 label_settings = SubResource("LabelSettings_qrpuq")
 autowrap_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/TabContainer/6_Capivara"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/6_Capivara"]
 layout_mode = 2
 text = "(Hydrochoerus hydrochaeris) "
 label_settings = SubResource("LabelSettings_tl6ss")
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/6_Capivara"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/6_Capivara"]
 layout_mode = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TabContainer/6_Capivara/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/6_Capivara/MarginContainer"]
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 texture = ExtResource("8_faqgo")
 expand_mode = 3
 stretch_mode = 6
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/TabContainer/6_Capivara"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/6_Capivara"]
+custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 size_flags_vertical = 3
 draw_focus_border = true
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/6_Capivara/ScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/6_Capivara/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Conteudo" type="Label" parent="VBoxContainer/TabContainer/6_Capivara/ScrollContainer/MarginContainer"]
+[node name="Conteudo" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/6_Capivara/ScrollContainer/MarginContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -460,12 +479,12 @@ text = "O maior roedor do mundo e uma figura icônica nas paisagens brasileiras.
 label_settings = SubResource("LabelSettings_tl6ss")
 autowrap_mode = 2
 
-[node name="7_Tamandua" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+[node name="7_Tamandua" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 6
 
-[node name="Titulo" type="Label" parent="VBoxContainer/TabContainer/7_Tamandua"]
+[node name="Titulo" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/7_Tamandua"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -476,37 +495,38 @@ text = "Tamanduá-Bandeira"
 label_settings = SubResource("LabelSettings_qrpuq")
 autowrap_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/TabContainer/7_Tamandua"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/7_Tamandua"]
 layout_mode = 2
 text = "(Myrmecophaga tridactyla)"
 label_settings = SubResource("LabelSettings_tl6ss")
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/7_Tamandua"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/7_Tamandua"]
 layout_mode = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TabContainer/7_Tamandua/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/7_Tamandua/MarginContainer"]
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 texture = ExtResource("9_vphdg")
 expand_mode = 3
 stretch_mode = 6
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/TabContainer/7_Tamandua"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/7_Tamandua"]
+custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 size_flags_vertical = 3
 draw_focus_border = true
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/7_Tamandua/ScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/7_Tamandua/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Conteudo" type="Label" parent="VBoxContainer/TabContainer/7_Tamandua/ScrollContainer/MarginContainer"]
+[node name="Conteudo" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/7_Tamandua/ScrollContainer/MarginContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -517,12 +537,12 @@ text = "Com um focinho longo e cilíndrico, ele utiliza uma língua extensível 
 label_settings = SubResource("LabelSettings_tl6ss")
 autowrap_mode = 2
 
-[node name="8_Anta" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+[node name="8_Anta" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 7
 
-[node name="Titulo" type="Label" parent="VBoxContainer/TabContainer/8_Anta"]
+[node name="Titulo" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/8_Anta"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -533,37 +553,38 @@ text = "Anta"
 label_settings = SubResource("LabelSettings_qrpuq")
 autowrap_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/TabContainer/8_Anta"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/8_Anta"]
 layout_mode = 2
 text = "(Tapirus terrestris)"
 label_settings = SubResource("LabelSettings_tl6ss")
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/8_Anta"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/8_Anta"]
 layout_mode = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TabContainer/8_Anta/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/8_Anta/MarginContainer"]
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 texture = ExtResource("10_o0dny")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/TabContainer/8_Anta"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/8_Anta"]
+custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 size_flags_vertical = 3
 draw_focus_border = true
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/8_Anta/ScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/8_Anta/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Conteudo" type="Label" parent="VBoxContainer/TabContainer/8_Anta/ScrollContainer/MarginContainer"]
+[node name="Conteudo" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/8_Anta/ScrollContainer/MarginContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -574,12 +595,12 @@ text = "A Anta é o maior mamífero terrestre da América do Sul, desempenhando 
 label_settings = SubResource("LabelSettings_tl6ss")
 autowrap_mode = 2
 
-[node name="9_onca" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+[node name="9_onca" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 8
 
-[node name="Titulo" type="Label" parent="VBoxContainer/TabContainer/9_onca"]
+[node name="Titulo" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/9_onca"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -590,37 +611,38 @@ text = "Onça-Pintada"
 label_settings = SubResource("LabelSettings_qrpuq")
 autowrap_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/TabContainer/9_onca"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/9_onca"]
 layout_mode = 2
 text = "(Panthera onca)"
 label_settings = SubResource("LabelSettings_tl6ss")
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/9_onca"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/9_onca"]
 layout_mode = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TabContainer/9_onca/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/9_onca/MarginContainer"]
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 texture = ExtResource("11_1agee")
 expand_mode = 3
 stretch_mode = 6
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/TabContainer/9_onca"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/9_onca"]
+custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 size_flags_vertical = 3
 draw_focus_border = true
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/9_onca/ScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/9_onca/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Conteudo" type="Label" parent="VBoxContainer/TabContainer/9_onca/ScrollContainer/MarginContainer"]
+[node name="Conteudo" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/9_onca/ScrollContainer/MarginContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -631,12 +653,12 @@ text = "A onça-pintada ocupa o topo da cadeia alimentar no Cerrado, desempenhan
 label_settings = SubResource("LabelSettings_tl6ss")
 autowrap_mode = 2
 
-[node name="10_ema" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+[node name="10_ema" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 9
 
-[node name="Titulo" type="Label" parent="VBoxContainer/TabContainer/10_ema"]
+[node name="Titulo" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/10_ema"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -647,37 +669,38 @@ text = "Ema"
 label_settings = SubResource("LabelSettings_qrpuq")
 autowrap_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/TabContainer/10_ema"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/10_ema"]
 layout_mode = 2
 text = "(Rhea americana)"
 label_settings = SubResource("LabelSettings_tl6ss")
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/10_ema"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/10_ema"]
 layout_mode = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TabContainer/10_ema/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/10_ema/MarginContainer"]
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 texture = ExtResource("12_i26jq")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/TabContainer/10_ema"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/10_ema"]
+custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 size_flags_vertical = 3
 draw_focus_border = true
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/10_ema/ScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/10_ema/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Conteudo" type="Label" parent="VBoxContainer/TabContainer/10_ema/ScrollContainer/MarginContainer"]
+[node name="Conteudo" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/10_ema/ScrollContainer/MarginContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -688,12 +711,12 @@ text = "A ema desempenha um papel ecológico fundamental nas vastas extensões d
 label_settings = SubResource("LabelSettings_tl6ss")
 autowrap_mode = 2
 
-[node name="11_coruja" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+[node name="11_coruja" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 10
 
-[node name="Titulo" type="Label" parent="VBoxContainer/TabContainer/11_coruja"]
+[node name="Titulo" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/11_coruja"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -704,37 +727,38 @@ text = "Coruja-Buraqueira"
 label_settings = SubResource("LabelSettings_qrpuq")
 autowrap_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/TabContainer/11_coruja"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/11_coruja"]
 layout_mode = 2
 text = "(Athene cunicularia)"
 label_settings = SubResource("LabelSettings_tl6ss")
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/11_coruja"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/11_coruja"]
 layout_mode = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TabContainer/11_coruja/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/11_coruja/MarginContainer"]
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 texture = ExtResource("13_lo3tl")
 expand_mode = 3
 stretch_mode = 6
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/TabContainer/11_coruja"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/11_coruja"]
+custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 size_flags_vertical = 3
 draw_focus_border = true
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/11_coruja/ScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/11_coruja/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Conteudo" type="Label" parent="VBoxContainer/TabContainer/11_coruja/ScrollContainer/MarginContainer"]
+[node name="Conteudo" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/11_coruja/ScrollContainer/MarginContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -745,11 +769,11 @@ text = "A coruja-buraqueira é uma das sentinelas mais vigilantes das paisagens 
 label_settings = SubResource("LabelSettings_tl6ss")
 autowrap_mode = 2
 
-[node name="TabsControl" type="HBoxContainer" parent="VBoxContainer"]
+[node name="TabsControl" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="Anterior" type="Button" parent="VBoxContainer/TabsControl"]
+[node name="Anterior" type="Button" parent="MarginContainer/VBoxContainer/TabsControl"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -759,7 +783,7 @@ theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxFlat_li4ei")
 text = "Anterior"
 
-[node name="Proximo" type="Button" parent="VBoxContainer/TabsControl"]
+[node name="Proximo" type="Button" parent="MarginContainer/VBoxContainer/TabsControl"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -769,7 +793,7 @@ theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxFlat_li4ei")
 text = "Seguinte"
 
-[node name="Inicio" type="Button" parent="VBoxContainer/TabsControl"]
+[node name="Inicio" type="Button" parent="MarginContainer/VBoxContainer/TabsControl"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ctm5qe5ot5yt7"]
+[gd_scene load_steps=11 format=3 uid="uid://ctm5qe5ot5yt7"]
 
 [ext_resource type="Script" uid="uid://e6k1yd2vkdvn" path="res://scripts/Main.gd" id="1_0bbpv"]
 [ext_resource type="PackedScene" uid="uid://l6e50qovrfld" path="res://scenes/GameUI.tscn" id="2_rvslj"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bim5cvq1doyi1" path="res://scenes/About.tscn" id="7_jlsqs"]
 [ext_resource type="PackedScene" uid="uid://dlgu2hyaibejw" path="res://scenes/HowToPlay.tscn" id="7_q8u5g"]
 [ext_resource type="Texture2D" uid="uid://b7bdpc4plpqqn" path="res://assets/backgrounds/game_background.png" id="8_jlsqs"]
+[ext_resource type="PackedScene" uid="uid://bf7v4gmi1ohro" path="res://scenes/Config.tscn" id="9_lhr70"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -58,6 +59,10 @@ visible = false
 layout_mode = 2
 
 [node name="About" parent="UIManager" instance=ExtResource("7_jlsqs")]
+visible = false
+layout_mode = 2
+
+[node name="Config" parent="UIManager" instance=ExtResource("9_lhr70")]
 visible = false
 layout_mode = 2
 

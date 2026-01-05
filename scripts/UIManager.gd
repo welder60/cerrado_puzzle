@@ -15,8 +15,9 @@ signal menu_button_pressed
 @onready var game_stages = $GameStages
 @onready var about_container = $About
 @onready var htp_container = $HowToPlay
+@onready var config_container = $Config
 
-@onready var scenes:Array[Control] = [main_menu,game_ui,victory_screen,game_stages,about_container,htp_container]
+@onready var scenes:Array[Control] = [main_menu,game_ui,victory_screen,game_stages,about_container,htp_container,config_container]
 
 @onready var victory_moves_label = $VictoryScreen/PanelContainer/VBoxContainer/MovesLabel
 @onready var new_highscore_label = $VictoryScreen/PanelContainer/VBoxContainer/HighscoreMessage
@@ -28,10 +29,11 @@ func _ready():
 	main_menu.get_node("VBoxContainer/CenterContainer/FirstMenu/Buttons/PlayButton").pressed.connect(_on_PlayButton_pressed)
 	main_menu.get_node("VBoxContainer/CenterContainer/FirstMenu/Buttons/AboutButton").pressed.connect(show_about)
 	main_menu.get_node("VBoxContainer/CenterContainer/FirstMenu/Buttons/HTPButton").pressed.connect(show_htp)
+	main_menu.get_node("VBoxContainer/CenterContainer/FirstMenu/Buttons/ConfigButton").pressed.connect(show_config)
 		
 		# UI do Jogo
 	game_ui.get_node("MarginContainer/MarginContainer/HBoxContainer/Buttons/ResetButton").pressed.connect(_on_ResetButton_pressed)
-	game_ui.get_node("MarginContainer/MarginContainer/HBoxContainer/Buttons/MenuButton").pressed.connect(_on_MenuButton_pressed)
+	game_ui.get_node("MarginContainer/MarginContainer/HBoxContainer/Buttons/MenuButton").pressed.connect(_on_PlayButton_pressed)
 	
 	game_stages.get_node("Panel/VBoxContainer/HBoxContainer/MenuButton").pressed.connect(_on_MenuButton_pressed)
 	# Tela de Vitória
@@ -39,8 +41,9 @@ func _ready():
 	victory_screen.get_node("PanelContainer/VBoxContainer/ActionButtons/MenuButton").pressed.connect(_on_MenuButton_pressed)
 	victory_screen.get_node("PanelContainer/VBoxContainer/ActionButtons/ContinueButton").pressed.connect(_on_PlayButton_pressed)
 
-	about_container.get_node("VBoxContainer/HBoxContainer/MenuButton").pressed.connect(_on_MenuButton_pressed)
-	htp_container.get_node("VBoxContainer/HBoxContainer/MenuButton").pressed.connect(_on_MenuButton_pressed)
+	about_container.get_node("MarginContainer/VBoxContainer/HBoxContainer/MenuButton").pressed.connect(_on_MenuButton_pressed)
+	htp_container.get_node("MarginContainer/VBoxContainer/HBoxContainer/MenuButton").pressed.connect(_on_MenuButton_pressed)
+	config_container.get_node("MarginContainer/VBoxContainer/HBoxContainer/MenuButton").pressed.connect(_on_MenuButton_pressed)
 	# Estado inicial: mostrar apenas o menu principal
 	show_main_menu()
 
@@ -76,7 +79,9 @@ func show_htp():
 	hide_all()
 	show_scene(htp_container)
 	
-
+func show_config():
+	hide_all()
+	show_scene(config_container)
 
 # --- Funções de Atualização de Dados ---
 

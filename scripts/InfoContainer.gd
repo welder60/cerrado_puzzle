@@ -1,9 +1,9 @@
 extends PanelContainer
 
-@onready var tabs_container:TabContainer = $VBoxContainer/TabContainer
-@onready var previous_button = $VBoxContainer/TabsControl/Anterior
-@onready var next_button = $VBoxContainer/TabsControl/Proximo
-@onready var begin_button = $VBoxContainer/TabsControl/Inicio
+@onready var tabs_container:TabContainer = $MarginContainer/VBoxContainer/TabContainer
+@onready var previous_button:Button = $MarginContainer/VBoxContainer/TabsControl/Anterior
+@onready var next_button = $MarginContainer/VBoxContainer/TabsControl/Proximo
+@onready var begin_button = $MarginContainer/VBoxContainer/TabsControl/Inicio
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	previous_button.pressed.connect(_on_prev_pressed)
