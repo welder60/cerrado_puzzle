@@ -1,7 +1,9 @@
 # SettingsManager.gd
 extends Node
+@export var confirmation:PanelContainer
 
 @onready var sfx_button = $MarginContainer/VBoxContainer/VBoxContainer/EfeitosSonoros
+@onready var erase_data_button = $MarginContainer/VBoxContainer/VBoxContainer/EraseData
 
 # Caminho para salvar apenas as preferências (separado do progresso)
 const SETTINGS_PATH = "user://settings.save"
@@ -13,6 +15,7 @@ func _ready():
 	load_settings()
 	apply_sound_settings()
 	sfx_button.pressed.connect(func():set_sound_enabled(!sound_enabled))
+	erase_data_button.pressed.connect(confirm_data_erase)
 
 # Função chamada pelo botão da UI
 func set_sound_enabled(enabled: bool):
@@ -45,3 +48,15 @@ func load_settings():
 		file.close()
 		if data is Dictionary and data.has("sound"):
 			sound_enabled = data["sound"]
+			
+func confirm_data_erase():
+	confirmation.message_text = "Os dados salvos do jogo serão apagador. Deseja continuar?"
+	confirmation.confirm_text = "Excluir dados"
+	confirmation.dismiss_text = "Cancelar"
+	confirmation.reset_signal()
+	confirmation.confirm_button.pressed.connect(erase_data)
+	confirmation.confirm_button.pressed.connect(func():confirmation.hide())
+	confirmation.show()
+	
+func erase_data():
+	pass

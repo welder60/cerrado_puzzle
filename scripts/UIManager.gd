@@ -16,8 +16,9 @@ signal menu_button_pressed
 @onready var about_container = $About
 @onready var htp_container = $HowToPlay
 @onready var config_container = $Config
+@onready var confirmation = $Confirmation
 
-@onready var scenes:Array[Control] = [main_menu,game_ui,victory_screen,game_stages,about_container,htp_container,config_container]
+@onready var scenes:Array[Control] = [main_menu,game_ui,victory_screen,game_stages,about_container,htp_container,config_container,confirmation]
 
 @onready var victory_moves_label = $VictoryScreen/PanelContainer/VBoxContainer/MovesLabel
 @onready var new_highscore_label = $VictoryScreen/PanelContainer/VBoxContainer/HighscoreMessage
@@ -33,9 +34,9 @@ func _ready():
 		
 		# UI do Jogo
 	game_ui.get_node("MarginContainer/MarginContainer/HBoxContainer/Buttons/ResetButton").pressed.connect(_on_ResetButton_pressed)
-	game_ui.get_node("MarginContainer/MarginContainer/HBoxContainer/Buttons/MenuButton").pressed.connect(_on_PlayButton_pressed)
+	game_ui.get_node("MarginContainer/MarginContainer/HBoxContainer/Buttons/MenuButton").pressed.connect(quit_game)
 	
-	game_stages.get_node("Panel/VBoxContainer/HBoxContainer/MenuButton").pressed.connect(_on_MenuButton_pressed)
+	game_stages.get_node("Panel/MarginContainer/VBoxContainer/HBoxContainer/MenuButton").pressed.connect(_on_MenuButton_pressed)
 	# Tela de Vitória
 	victory_screen.get_node("PanelContainer/VBoxContainer/ActionButtons/PlayAgainButton").pressed.connect(_on_PlayAgainButton_pressed)
 	victory_screen.get_node("PanelContainer/VBoxContainer/ActionButtons/MenuButton").pressed.connect(_on_MenuButton_pressed)
@@ -82,9 +83,18 @@ func show_htp():
 func show_config():
 	hide_all()
 	show_scene(config_container)
+	
+func quit_game():
+	confirmation.message_text = "Deseja sair a partida?"
+	confirmation.confirm_text = "Sair da partida"
+	confirmation.dismiss_text = "Permanecer"
+	confirmation.reset_signal()
+	confirmation.confirm_button.pressed.connect(_on_PlayButton_pressed)	
+	show_confirmation()
 
 # --- Funções de Atualização de Dados ---
-
+func show_confirmation():
+	show_scene(confirmation)
 
 
 
@@ -99,7 +109,16 @@ func _on_PlayButton_pressed():
 	emit_signal("play_button_pressed")
 
 func _on_ResetButton_pressed():
+	confirmation.message_text = "Reiniciar a partida?"
+	confirmation.confirm_text = "Reiniciar"
+	confirmation.dismiss_text = "Permanecer"
+	confirmation.reset_signal()
+	confirmation.confirm_button.pressed.connect(reset_game)	
+	show_confirmation()
+
+func reset_game():	
 	emit_signal("reset_button_pressed")
+	
 
 func _on_MenuButton_pressed():
 	emit_signal("menu_button_pressed")

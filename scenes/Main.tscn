@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ctm5qe5ot5yt7"]
+[gd_scene load_steps=12 format=3 uid="uid://ctm5qe5ot5yt7"]
 
 [ext_resource type="Script" uid="uid://e6k1yd2vkdvn" path="res://scripts/Main.gd" id="1_0bbpv"]
 [ext_resource type="PackedScene" uid="uid://l6e50qovrfld" path="res://scenes/GameUI.tscn" id="2_rvslj"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dlgu2hyaibejw" path="res://scenes/HowToPlay.tscn" id="7_q8u5g"]
 [ext_resource type="Texture2D" uid="uid://b7bdpc4plpqqn" path="res://assets/backgrounds/game_background.png" id="8_jlsqs"]
 [ext_resource type="PackedScene" uid="uid://bf7v4gmi1ohro" path="res://scenes/Config.tscn" id="9_lhr70"]
+[ext_resource type="PackedScene" uid="uid://bbf7pqmbrm00s" path="res://scenes/Confirmation.tscn" id="10_wp0k4"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -62,8 +63,14 @@ layout_mode = 2
 visible = false
 layout_mode = 2
 
-[node name="Config" parent="UIManager" instance=ExtResource("9_lhr70")]
+[node name="Config" parent="UIManager" node_paths=PackedStringArray("confirmation") instance=ExtResource("9_lhr70")]
 visible = false
+layout_mode = 2
+confirmation = NodePath("../Confirmation")
+
+[node name="Confirmation" parent="UIManager" instance=ExtResource("10_wp0k4")]
+visible = false
+z_index = 10
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="."]

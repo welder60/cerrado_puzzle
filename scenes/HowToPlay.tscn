@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dlgu2hyaibejw"]
+[gd_scene load_steps=20 format=3 uid="uid://dlgu2hyaibejw"]
 
 [ext_resource type="StyleBox" uid="uid://bifftooe260b" path="res://assets/styles/window.tres" id="1_6dy36"]
 [ext_resource type="Script" uid="uid://cnxtxblcx6xpq" path="res://scripts/InfoContainer.gd" id="2_iqfql"]
@@ -13,6 +13,26 @@
 bg_color = Color(0.84705883, 0.43137255, 0.1254902, 1)
 border_width_bottom = 3
 border_color = Color(0.72156864, 0.3372549, 0.12941177, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.36078432)
+shadow_size = 2
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lilvb"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.38039216, 0.38039216, 0.38039216, 1)
+border_width_bottom = 3
+border_color = Color(0.2784314, 0.2784314, 0.2784314, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -77,6 +97,106 @@ shadow_color = Color(0, 0, 0, 0.36078432)
 shadow_size = 2
 shadow_offset = Vector2(0, 3)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uxq4p"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.38039216, 0.38039216, 0.38039216, 1)
+border_width_bottom = 3
+border_color = Color(0.2784314, 0.2784314, 0.2784314, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.36078432)
+shadow_size = 2
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ul6c"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.38039216, 0.38039216, 0.38039216, 1)
+border_width_bottom = 3
+border_color = Color(0.2784314, 0.2784314, 0.2784314, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.36078432)
+shadow_size = 2
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v2j1b"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.38039216, 0.38039216, 0.38039216, 1)
+border_width_bottom = 3
+border_color = Color(0.2784314, 0.2784314, 0.2784314, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.36078432)
+shadow_size = 2
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vy6pn"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.38039216, 0.38039216, 0.38039216, 1)
+border_width_bottom = 3
+border_color = Color(0.2784314, 0.2784314, 0.2784314, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.36078432)
+shadow_size = 2
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tprqc"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.38039216, 0.38039216, 0.38039216, 1)
+border_width_bottom = 3
+border_color = Color(0.2784314, 0.2784314, 0.2784314, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.36078432)
+shadow_size = 2
+shadow_offset = Vector2(0, 3)
+
 [node name="PanelContainer" type="PanelContainer"]
 anchors_preset = 15
 anchor_right = 1.0
@@ -109,6 +229,8 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_w7prh")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxFlat_as3tu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lilvb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lilvb")
 action_mode = 0
 text = "Voltar"
 
@@ -295,6 +417,8 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_gpaav")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxFlat_li4ei")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uxq4p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1ul6c")
 text = "Anterior"
 
 [node name="Proximo" type="Button" parent="MarginContainer/VBoxContainer/TabsControl"]
@@ -305,6 +429,8 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_gpaav")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxFlat_li4ei")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v2j1b")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vy6pn")
 text = "Seguinte"
 
 [node name="Inicio" type="Button" parent="MarginContainer/VBoxContainer/TabsControl"]
@@ -315,4 +441,6 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_gpaav")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxFlat_li4ei")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lilvb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tprqc")
 text = "Início"

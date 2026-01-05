@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bf7v4gmi1ohro"]
+[gd_scene load_steps=15 format=3 uid="uid://bf7v4gmi1ohro"]
 
 [ext_resource type="StyleBox" uid="uid://bifftooe260b" path="res://assets/styles/window.tres" id="1_u5tr3"]
-[ext_resource type="Script" uid="uid://c0tdtru0bap6" path="res://scenes/Config.gd" id="2_vaubc"]
+[ext_resource type="Script" uid="uid://c0tdtru0bap6" path="res://scripts/Config.gd" id="2_vaubc"]
 
 [sub_resource type="FontVariation" id="FontVariation_w7prh"]
 
@@ -9,6 +9,46 @@
 bg_color = Color(0.84705883, 0.43137255, 0.1254902, 1)
 border_width_bottom = 3
 border_color = Color(0.72156864, 0.3372549, 0.12941177, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.36078432)
+shadow_size = 2
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vaubc"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.38039216, 0.38039216, 0.38039216, 1)
+border_width_bottom = 3
+border_color = Color(0.2784314, 0.2784314, 0.2784314, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.36078432)
+shadow_size = 2
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_deowu"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.38039216, 0.38039216, 0.38039216, 1)
+border_width_bottom = 3
+border_color = Color(0.2784314, 0.2784314, 0.2784314, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -39,12 +79,92 @@ shadow_color = Color(0, 0, 0, 0.36078432)
 shadow_size = 2
 shadow_offset = Vector2(0, 3)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u5tr3"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.38039216, 0.38039216, 0.38039216, 1)
+border_width_bottom = 3
+border_color = Color(0.2784314, 0.2784314, 0.2784314, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.36078432)
+shadow_size = 2
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pla6w"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.38039216, 0.38039216, 0.38039216, 1)
+border_width_bottom = 3
+border_color = Color(0.2784314, 0.2784314, 0.2784314, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.36078432)
+shadow_size = 2
+shadow_offset = Vector2(0, 3)
+
 [sub_resource type="FontVariation" id="FontVariation_vaubc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wfw86"]
 bg_color = Color(0.9079727, 0.24813586, 3.85046e-07, 1)
 border_width_bottom = 3
 border_color = Color(0.7325631, 0.20607248, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.36078432)
+shadow_size = 2
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ilrkx"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.38039216, 0.38039216, 0.38039216, 1)
+border_width_bottom = 3
+border_color = Color(0.2784314, 0.2784314, 0.2784314, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.36078432)
+shadow_size = 2
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ikelf"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.38039216, 0.38039216, 0.38039216, 1)
+border_width_bottom = 3
+border_color = Color(0.2784314, 0.2784314, 0.2784314, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -97,6 +217,8 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_w7prh")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxFlat_as3tu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vaubc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_deowu")
 action_mode = 0
 text = "Voltar"
 
@@ -110,16 +232,21 @@ alignment = 1
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_gpaav")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxFlat_li4ei")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u5tr3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pla6w")
 text = "Efeitos Sonoros"
 
-[node name="QuickPlayButton" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="EraseData" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_vaubc")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxFlat_wfw86")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ilrkx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ikelf")
 text = "Excluir Dados"
