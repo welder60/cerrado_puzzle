@@ -1,7 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://bf7v4gmi1ohro"]
+[gd_scene load_steps=17 format=3 uid="uid://bf7v4gmi1ohro"]
 
 [ext_resource type="StyleBox" uid="uid://bifftooe260b" path="res://assets/styles/window.tres" id="1_u5tr3"]
 [ext_resource type="Script" uid="uid://c0tdtru0bap6" path="res://scripts/Config.gd" id="2_vaubc"]
+[ext_resource type="Texture2D" uid="uid://jw2j3h14vjwg" path="res://assets/ui/sfx_on.png" id="3_wfw86"]
+[ext_resource type="Texture2D" uid="uid://cxwyxy65mtyua" path="res://assets/ui/sfx_off.png" id="4_deowu"]
 
 [sub_resource type="FontVariation" id="FontVariation_w7prh"]
 
@@ -183,16 +185,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -239.0
-offset_top = -121.0
-offset_right = 239.0
-offset_bottom = 121.0
+offset_left = -313.5
+offset_top = -229.5
+offset_right = 313.5
+offset_bottom = 229.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = ExtResource("1_u5tr3")
 script = ExtResource("2_vaubc")
+sfx_on_icon = ExtResource("3_wfw86")
+sfx_off_icon = ExtResource("4_deowu")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -219,7 +223,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_w7prh")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxFlat_as3tu")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_vaubc")
 theme_override_styles/hover = SubResource("StyleBoxFlat_deowu")
@@ -239,17 +243,19 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_gpaav")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxFlat_li4ei")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_u5tr3")
 theme_override_styles/hover = SubResource("StyleBoxFlat_pla6w")
 text = "Efeitos Sonoros"
+icon = ExtResource("3_wfw86")
+icon_alignment = 2
 
 [node name="EraseData" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_vaubc")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxFlat_wfw86")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ilrkx")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ikelf")

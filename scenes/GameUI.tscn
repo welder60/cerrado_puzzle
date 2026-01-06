@@ -123,7 +123,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_4s3j0")
-theme_override_font_sizes/font_size = 70
+theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxFlat_7ro0d")
 text = "Reiniciar"
 icon_alignment = 2
@@ -134,7 +134,7 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_rs3te")
-theme_override_font_sizes/font_size = 70
+theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxFlat_56cg4")
 text = "Sair"
 

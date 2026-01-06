@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://vo1a0myygaxy"]
+[gd_scene load_steps=12 format=3 uid="uid://vo1a0myygaxy"]
 
 [ext_resource type="StyleBox" uid="uid://bifftooe260b" path="res://assets/styles/window.tres" id="1_mvsuf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mvsuf"]
-font_size = 29
+font_size = 60
 font_color = Color(0.5853204, 0.26653427, 0.111446954, 1)
 stacked_outline_count = 1
 stacked_outline_0/size = 3
@@ -61,6 +61,64 @@ shadow_color = Color(0, 0, 0, 0.36078432)
 shadow_size = 2
 shadow_offset = Vector2(0, 3)
 
+[sub_resource type="FontVariation" id="FontVariation_mvsuf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ylodf"]
+bg_color = Color(0.84705883, 0.43137255, 0.1254902, 1)
+border_width_bottom = 3
+border_color = Color(0.72156864, 0.3372549, 0.12941177, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.36078432)
+shadow_size = 2
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rs8e4"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.38039216, 0.38039216, 0.38039216, 1)
+border_width_bottom = 3
+border_color = Color(0.2784314, 0.2784314, 0.2784314, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.36078432)
+shadow_size = 2
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cwo7s"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.38039216, 0.38039216, 0.38039216, 1)
+border_width_bottom = 3
+border_color = Color(0.2784314, 0.2784314, 0.2784314, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.36078432)
+shadow_size = 2
+shadow_offset = Vector2(0, 3)
+
 [node name="QuickPlayMenu" type="PanelContainer"]
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -70,11 +128,11 @@ theme_override_styles/panel = ExtResource("1_mvsuf")
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = -4
-alignment = 1
+theme_override_constants/separation = 40
+alignment = 2
 
 [node name="Buttons" type="VBoxContainer" parent="VBoxContainer"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -82,6 +140,7 @@ theme_override_constants/separation = 23
 
 [node name="Label" type="Label" parent="VBoxContainer/Buttons"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 60
 text = "Jogo Rápido"
 label_settings = SubResource("LabelSettings_mvsuf")
 horizontal_alignment = 1
@@ -91,7 +150,7 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_2wh52")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxFlat_2wh52")
 text = "Fácil"
 
@@ -99,7 +158,7 @@ text = "Fácil"
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_ow34m")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxFlat_ow34m")
 text = "Médio"
 
@@ -107,6 +166,19 @@ text = "Médio"
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_2wh52")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxFlat_l72w3")
 text = "Difícil"
+
+[node name="MenuButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(300, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_mvsuf")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_ylodf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rs8e4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cwo7s")
+action_mode = 0
+text = "Voltar"

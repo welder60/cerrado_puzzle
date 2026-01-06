@@ -1,5 +1,9 @@
 # SettingsManager.gd
 extends Node
+
+@export var sfx_on_icon:Texture
+@export var sfx_off_icon:Texture
+
 @export var confirmation:PanelContainer
 
 @onready var sfx_button = $MarginContainer/VBoxContainer/VBoxContainer/EfeitosSonoros
@@ -18,12 +22,20 @@ func _ready():
 	apply_sound_settings()
 	sfx_button.pressed.connect(func():set_sound_enabled(!sound_enabled))
 	erase_data_button.pressed.connect(confirm_data_erase)
+	update_sfx_button()
 
 # Função chamada pelo botão da UI
 func set_sound_enabled(enabled: bool):
 	sound_enabled = enabled
 	apply_sound_settings()
 	save_settings()
+	update_sfx_button()
+	
+func update_sfx_button():
+	if sound_enabled:
+		sfx_button.icon = sfx_on_icon
+	else:
+		sfx_button.icon = sfx_off_icon
 
 # Aplica a configuração atual no servidor de áudio do Godot
 func apply_sound_settings():

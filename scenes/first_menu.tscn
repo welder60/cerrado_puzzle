@@ -289,7 +289,6 @@ action_mode = 0
 text = "Jogar"
 
 [node name="QuickPlayButton" type="Button" parent="Buttons"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)

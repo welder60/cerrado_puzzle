@@ -289,7 +289,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_w7prh")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxFlat_as3tu")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_faqgo")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vphdg")
@@ -299,7 +299,7 @@ text = "Voltar"
 [node name="TabContainer" type="TabContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8pwg6")
-current_tab = 1
+current_tab = 10
 tabs_visible = false
 
 [node name="1_Cerrado" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
@@ -328,7 +328,7 @@ theme_override_constants/margin_bottom = 50
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/1_Cerrado/MarginContainer"]
 layout_mode = 2
 texture = ExtResource("2_8i5if")
-stretch_mode = 6
+stretch_mode = 5
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/1_Cerrado"]
 custom_minimum_size = Vector2(0, 500)
@@ -354,6 +354,7 @@ label_settings = SubResource("LabelSettings_tl6ss")
 autowrap_mode = 2
 
 [node name="2_LoboGuara" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -383,7 +384,7 @@ theme_override_constants/margin_bottom = 50
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/2_LoboGuara/MarginContainer"]
 layout_mode = 2
 texture = ExtResource("4_wv8np")
-stretch_mode = 6
+stretch_mode = 3
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/2_LoboGuara"]
 custom_minimum_size = Vector2(0, 500)
@@ -441,7 +442,7 @@ custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 texture = ExtResource("5_jecps")
 expand_mode = 3
-stretch_mode = 6
+stretch_mode = 5
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/3_TatuCanastra"]
 custom_minimum_size = Vector2(0, 500)
@@ -874,7 +875,6 @@ label_settings = SubResource("LabelSettings_tl6ss")
 autowrap_mode = 2
 
 [node name="11_coruja" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 10
 
@@ -895,6 +895,7 @@ text = "(Athene cunicularia)"
 label_settings = SubResource("LabelSettings_tl6ss")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/11_coruja"]
+clip_contents = true
 layout_mode = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 50
@@ -906,7 +907,7 @@ custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 texture = ExtResource("13_lo3tl")
 expand_mode = 3
-stretch_mode = 6
+stretch_mode = 3
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/11_coruja"]
 custom_minimum_size = Vector2(0, 500)
@@ -941,7 +942,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_gpaav")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxFlat_li4ei")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_o0dny")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1agee")
@@ -953,7 +954,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_gpaav")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxFlat_li4ei")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_i26jq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_lo3tl")
@@ -965,7 +966,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_gpaav")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxFlat_li4ei")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_5xd7u")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fo7vq")

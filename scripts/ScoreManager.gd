@@ -26,18 +26,41 @@ func update_stage_result(stage_id: int, moves: int, stars: int) -> Dictionary:
 			level_data[stage_key]["stars"] = stars
 			new_stars = true
 	
-	if new_record or new_stars:
+	if new_record or new_stars:		
 		save_data()
 	
 	return {"new_record": new_record, "new_stars": new_stars}
 
+func update_quick_play(difficulty:GameManager.Difficulty,moves:int):
+	load_data()
+	var stage_key = GameManager.Difficulty.keys()[difficulty]
+	var new_record = false
+	# Se a fase nunca foi jogada, cria a entrada inicial
+	if not level_data.has(stage_key):
+		level_data[stage_key] = {"moves": moves}
+		new_record = true
+	else:
+		# Verifica se bateu o recorde de movimentos (menor é melhor)
+		if moves < level_data[stage_key]["moves"]:
+			level_data[stage_key]["moves"] = moves
+			new_record = true		
+	
+	if new_record:		
+		save_data()
+	return {"new_record": new_record}
 # Retorna os dados de uma fase ou valores padrão
-func get_stage_info(stage_id: int) -> Dictionary:
+func get_stage_info(stage_id:int) -> Dictionary:
 	load_data()
 	var stage_key = str(stage_id)
 	if level_data.has(stage_key):
 		return level_data[stage_key]
 	return {"moves": -1, "stars": 0}
+	
+func get_quick_play_info(difficulty:GameManager.Difficulty):
+	var stage_key = GameManager.Difficulty.keys()[difficulty]
+	if level_data.has(stage_key):
+		return level_data[stage_key]
+	return {"moves": -1}
 
 func save_data():
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
@@ -54,7 +77,7 @@ func load_data():
 			if data is Dictionary:
 				level_data = data
 			file.close()
-
+	
 func clear_data():
 	level_data = {}
 	save_data()

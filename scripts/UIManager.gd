@@ -17,10 +17,11 @@ signal menu_button_pressed
 @onready var htp_container = $HowToPlay
 @onready var config_container = $Config
 @onready var confirmation = $Confirmation
+@onready var quick_play_container = $QuickPlayMenu
 
 @onready var click_sfx = $ClickSFX
 
-@onready var scenes:Array[Control] = [main_menu,game_ui,victory_screen,game_stages,about_container,htp_container,config_container,confirmation]
+@onready var scenes:Array[Control] = [main_menu,game_ui,victory_screen,game_stages,about_container,htp_container,config_container,confirmation,quick_play_container]
 
 
 # Chamado quando o nó entra na árvore da cena.
@@ -28,6 +29,7 @@ func _ready():
 	# Conecta os sinais dos botões a este script
 	# Menu Principal
 	main_menu.get_node("VBoxContainer/CenterContainer/FirstMenu/Buttons/PlayButton").pressed.connect(_on_PlayButton_pressed)
+	main_menu.get_node("VBoxContainer/CenterContainer/FirstMenu/Buttons/QuickPlayButton").pressed.connect(_on_QuickPlayButton_pressed)
 	main_menu.get_node("VBoxContainer/CenterContainer/FirstMenu/Buttons/AboutButton").pressed.connect(show_about)
 	main_menu.get_node("VBoxContainer/CenterContainer/FirstMenu/Buttons/HTPButton").pressed.connect(show_htp)
 	main_menu.get_node("VBoxContainer/CenterContainer/FirstMenu/Buttons/ConfigButton").pressed.connect(show_config)
@@ -36,7 +38,14 @@ func _ready():
 	game_ui.get_node("MarginContainer/MarginContainer/HBoxContainer/Buttons/ResetButton").pressed.connect(_on_ResetButton_pressed)
 	game_ui.get_node("MarginContainer/MarginContainer/HBoxContainer/Buttons/MenuButton").pressed.connect(quit_game)
 	
+	quick_play_container.get_node("VBoxContainer/Buttons/EasyButton").pressed.connect(func():_quick_play(GameManager.Difficulty.EASY))
+	quick_play_container.get_node("VBoxContainer/Buttons/MediumButton").pressed.connect(func():_quick_play(GameManager.Difficulty.MEDIUM))
+	quick_play_container.get_node("VBoxContainer/Buttons/HardButton").pressed.connect(func():_quick_play(GameManager.Difficulty.HARD))
+	
+	
 	game_stages.get_node("Panel/MarginContainer/VBoxContainer/HBoxContainer/MenuButton").pressed.connect(_on_MenuButton_pressed)
+	quick_play_container.get_node("VBoxContainer/MenuButton").pressed.connect(_on_MenuButton_pressed)
+	
 	# Tela de Vitória
 	victory_screen.get_node("PanelContainer/VBoxContainer/ActionButtons/PlayAgainButton").pressed.connect(_on_PlayAgainButton_pressed)
 	victory_screen.get_node("PanelContainer/VBoxContainer/ActionButtons/MenuButton").pressed.connect(_on_MenuButton_pressed)
@@ -51,6 +60,10 @@ func _ready():
 	show_main_menu()
 
 # --- Funções de Visibilidade ---
+
+func _quick_play(difficulty):
+	game_ui.quick_play(difficulty)
+	show_game_ui()
 
 func hide_all():
 	click_sfx.play()
@@ -122,6 +135,10 @@ func _on_MenuButton_pressed():
 func _on_PlayAgainButton_pressed():
 	# Funciona como o botão de reset
 	emit_signal("reset_button_pressed")
+	
+func _on_QuickPlayButton_pressed():
+	hide_all()
+	show_scene(quick_play_container)
 
 func _on_game_won(moves_count:int,stars:int,new_record:bool):
 	victory_screen.update_ui(moves_count,stars,new_record)
