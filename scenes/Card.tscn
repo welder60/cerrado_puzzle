@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://df0thsjlco4v2"]
 
 [ext_resource type="Script" uid="uid://c0mufdk1hofe1" path="res://scripts/Card.gd" id="1_yiag5"]
-[ext_resource type="Texture2D" uid="uid://dho5fckyes33a" path="res://assets/images/image_4.png" id="2_tgmmg"]
+[ext_resource type="Texture2D" uid="uid://cmann0ipcbsqt" path="res://assets/images/image_0.png" id="2_tgmmg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qf083"]
 bg_color = Color(0.42632788, 0.77260965, 0.1729129, 1)
@@ -16,7 +16,7 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4dx8l"]
-bg_color = Color(0.81960785, 0.627451, 0.42352942, 1)
+bg_color = Color(0.47553742, 0.7054503, 0.29397687, 1)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
@@ -40,7 +40,7 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
 [node name="Card" type="Control"]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(300, 300)
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5

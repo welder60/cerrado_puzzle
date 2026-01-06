@@ -5,6 +5,8 @@ extends Node
 @onready var sfx_button = $MarginContainer/VBoxContainer/VBoxContainer/EfeitosSonoros
 @onready var erase_data_button = $MarginContainer/VBoxContainer/VBoxContainer/EraseData
 
+@onready var score_manager = ScoreManager.new()
+
 # Caminho para salvar apenas as preferências (separado do progresso)
 const SETTINGS_PATH = "user://settings.save"
 
@@ -59,4 +61,4 @@ func confirm_data_erase():
 	confirmation.show()
 	
 func erase_data():
-	pass
+	score_manager.clear_data()

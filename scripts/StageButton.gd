@@ -13,8 +13,8 @@ func _ready() -> void:
 	enable(false)
 		
 func set_stars(n_stars:int):	
-	for i in range(n_stars):
-		stars[i].disabled = false
+	for i in range(stars.size()):
+		stars[i].disabled = n_stars<=i
 
 func enable(enabled:bool):
 	stage_button.disabled = !enabled

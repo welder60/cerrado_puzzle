@@ -24,7 +24,6 @@ func _ready():
 	
 	# Conecta os sinais do GameBoard
 #	game_board.moves_updated.connect(ui_manager.update_moves)
-	game_board.game_won.connect(_on_game_won)
 	game_board.moves_updated.connect(update_moves)
 		
 	
@@ -35,7 +34,7 @@ func _ready():
 	#_on_play_button_pressed()
 
 func _on_stage_selected(stage_id:int):
-	game_board.load_stage(stage_id)
+	game_ui.load_stage(stage_id)
 	ui_manager.show_game_ui()
 
 func _on_play_button_pressed():
@@ -45,7 +44,7 @@ func _on_play_button_pressed():
 	#game_board.initialize_board()
 
 func _on_reset_button_pressed():
-	game_board.restart()
+	game_ui.restart()
 	ui_manager.show_game_ui()
 	ui_manager.victory_screen.hide()
 
@@ -59,18 +58,7 @@ func _on_rotate_row(row_index: int, direction: int):
 func _on_rotate_col(col_index: int, direction: int):
 	game_board.rotate_column(col_index, direction)
 
-func update_moves(moves: int,high_score:int):
+func update_moves(moves: int):
 	moves_label.text = "Movimentos: %d" % moves
-	high_score_label.visible = high_score>0
-	high_score_label.text = "Recorde: %d" % high_score
-
-func _on_game_won(moves_count:int):
-	var moves = game_board.moves_count
-	#var score = score_manager.calculate_score(moves)
-	#var is_new_highscore = score_manager.save_highscore(score)
-	var is_new_highscore = false
-	ui_manager.set_victory_details(moves, is_new_highscore)
-	ui_manager.show_victory_screen()
-	
-#	if is_new_highscore:
-#		ui_manager.update_highscore(score)
+	high_score_label.visible = game_ui.record_moves>0
+	high_score_label.text = "Recorde: %d" % game_ui.record_moves

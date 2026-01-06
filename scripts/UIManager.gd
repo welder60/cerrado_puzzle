@@ -22,8 +22,6 @@ signal menu_button_pressed
 
 @onready var scenes:Array[Control] = [main_menu,game_ui,victory_screen,game_stages,about_container,htp_container,config_container,confirmation]
 
-@onready var victory_moves_label = $VictoryScreen/PanelContainer/VBoxContainer/MovesLabel
-@onready var new_highscore_label = $VictoryScreen/PanelContainer/VBoxContainer/HighscoreMessage
 
 # Chamado quando o nó entra na árvore da cena.
 func _ready():
@@ -47,7 +45,9 @@ func _ready():
 	about_container.get_node("MarginContainer/VBoxContainer/HBoxContainer/MenuButton").pressed.connect(_on_MenuButton_pressed)
 	htp_container.get_node("MarginContainer/VBoxContainer/HBoxContainer/MenuButton").pressed.connect(_on_MenuButton_pressed)
 	config_container.get_node("MarginContainer/VBoxContainer/HBoxContainer/MenuButton").pressed.connect(_on_MenuButton_pressed)
-	# Estado inicial: mostrar apenas o menu principal
+	# Estado inicial: mostrar apenas o menu principal	
+	game_ui.victory_handled.connect(_on_game_won)
+	
 	show_main_menu()
 
 # --- Funções de Visibilidade ---
@@ -99,13 +99,6 @@ func quit_game():
 func show_confirmation():
 	show_scene(confirmation)
 
-
-
-func set_victory_details(moves: int, is_new_highscore: bool):
-	victory_moves_label.text = "Você venceu em %d movimentos!" % moves
-	#victory_score_label.text = "Score: %d" % score
-	new_highscore_label.visible = is_new_highscore
-
 # --- Handlers de Sinais dos Botões ---
 
 func _on_PlayButton_pressed():
@@ -129,3 +122,7 @@ func _on_MenuButton_pressed():
 func _on_PlayAgainButton_pressed():
 	# Funciona como o botão de reset
 	emit_signal("reset_button_pressed")
+
+func _on_game_won(moves_count:int,stars:int,new_record:bool):
+	victory_screen.update_ui(moves_count,stars,new_record)
+	show_victory_screen()

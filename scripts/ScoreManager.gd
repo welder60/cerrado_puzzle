@@ -46,6 +46,7 @@ func save_data():
 		file.close()
 
 func load_data():
+	level_data = {}
 	if FileAccess.file_exists(SAVE_PATH):
 		var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
 		if file:
@@ -53,3 +54,7 @@ func load_data():
 			if data is Dictionary:
 				level_data = data
 			file.close()
+
+func clear_data():
+	level_data = {}
+	save_data()

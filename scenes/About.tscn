@@ -331,7 +331,7 @@ texture = ExtResource("2_8i5if")
 stretch_mode = 6
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/1_Cerrado"]
-custom_minimum_size = Vector2(0, 300)
+custom_minimum_size = Vector2(0, 500)
 layout_mode = 2
 size_flags_vertical = 3
 draw_focus_border = true
@@ -386,7 +386,7 @@ texture = ExtResource("4_wv8np")
 stretch_mode = 6
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/2_LoboGuara"]
-custom_minimum_size = Vector2(0, 300)
+custom_minimum_size = Vector2(0, 500)
 layout_mode = 2
 size_flags_vertical = 3
 draw_focus_border = true
@@ -444,7 +444,7 @@ expand_mode = 3
 stretch_mode = 6
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/3_TatuCanastra"]
-custom_minimum_size = Vector2(0, 300)
+custom_minimum_size = Vector2(0, 500)
 layout_mode = 2
 size_flags_vertical = 3
 draw_focus_border = true
@@ -502,7 +502,7 @@ expand_mode = 3
 stretch_mode = 5
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/4_VeadoCampeiro"]
-custom_minimum_size = Vector2(0, 300)
+custom_minimum_size = Vector2(0, 500)
 layout_mode = 2
 size_flags_vertical = 3
 draw_focus_border = true
@@ -561,7 +561,7 @@ expand_mode = 3
 stretch_mode = 5
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/5_Seriema"]
-custom_minimum_size = Vector2(0, 300)
+custom_minimum_size = Vector2(0, 500)
 layout_mode = 2
 size_flags_vertical = 3
 draw_focus_border = true
@@ -619,7 +619,7 @@ expand_mode = 3
 stretch_mode = 6
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/6_Capivara"]
-custom_minimum_size = Vector2(0, 300)
+custom_minimum_size = Vector2(0, 500)
 layout_mode = 2
 size_flags_vertical = 3
 draw_focus_border = true
@@ -677,7 +677,7 @@ expand_mode = 3
 stretch_mode = 6
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/7_Tamandua"]
-custom_minimum_size = Vector2(0, 300)
+custom_minimum_size = Vector2(0, 500)
 layout_mode = 2
 size_flags_vertical = 3
 draw_focus_border = true
@@ -735,7 +735,7 @@ expand_mode = 3
 stretch_mode = 5
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/8_Anta"]
-custom_minimum_size = Vector2(0, 300)
+custom_minimum_size = Vector2(0, 500)
 layout_mode = 2
 size_flags_vertical = 3
 draw_focus_border = true
@@ -793,7 +793,7 @@ expand_mode = 3
 stretch_mode = 6
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/9_onca"]
-custom_minimum_size = Vector2(0, 300)
+custom_minimum_size = Vector2(0, 500)
 layout_mode = 2
 size_flags_vertical = 3
 draw_focus_border = true
@@ -851,7 +851,7 @@ expand_mode = 3
 stretch_mode = 5
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/10_ema"]
-custom_minimum_size = Vector2(0, 300)
+custom_minimum_size = Vector2(0, 500)
 layout_mode = 2
 size_flags_vertical = 3
 draw_focus_border = true
@@ -909,7 +909,7 @@ expand_mode = 3
 stretch_mode = 6
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/11_coruja"]
-custom_minimum_size = Vector2(0, 300)
+custom_minimum_size = Vector2(0, 500)
 layout_mode = 2
 size_flags_vertical = 3
 draw_focus_border = true

@@ -2,7 +2,7 @@ extends PanelContainer # Mudamos para Control para gerenciar a árvore intername
 
 
 signal game_won(moves_count: int)
-signal moves_updated(moves_count: int,record_moves: int)
+signal moves_updated(moves_count: int)
 
 @onready var swap_sfx = $Swipe
 @onready var win_sfx = $Win
@@ -28,24 +28,11 @@ var is_playing := false
 var overlay: Control
 var center_container: CenterContainer
 
-@onready var level_manager = LevelManager.new()
-@onready var score_manager = ScoreManager.new()
-
-var _stage_id:int
 
 func _ready() -> void:
 	_setup_ui_structure()
 	# Exemplo de início
 	
-func load_stage(stage_id:int):
-	_stage_id = stage_id
-	start_from_matrix(level_manager.get_stage_data(stage_id)["grid"])
-	record_moves = score_manager.get_stage_info(stage_id)["moves"]
-	moves_updated.emit(moves_count,record_moves)
-	
-
-func restart():
-	load_stage(_stage_id)
 
 func _setup_ui_structure() -> void:
 	# Criamos a estrutura que garante a centralização e o overlay
@@ -69,6 +56,10 @@ func _setup_ui_structure() -> void:
 	board_anchor.add_child(overlay)
 
 func start_from_matrix(matrix: Array) -> void:
+	
+	moves_count = 0
+	moves_updated.emit(moves_count)
+	
 	if matrix.is_empty(): return
 	rows = matrix.size()
 	cols = matrix[0].size()
@@ -83,7 +74,6 @@ func start_from_matrix(matrix: Array) -> void:
 	var cell_h = floor(available_h / rows)
 	card_size = int(min(cell_w, cell_h) - card_padding)
 	
-	_reset_game()
 	_build_board(matrix)
 	
 	# Aguarda o Godot calcular as posições dos slots antes de colocar os cards
@@ -92,10 +82,8 @@ func start_from_matrix(matrix: Array) -> void:
 	
 	_create_cards()
 	is_playing = true
+	
 
-func _reset_game() -> void:
-	moves_count = 0
-	moves_updated.emit(moves_count,record_moves)
 
 func _build_board(id_matrix: Array) -> void:
 	for c in layout_grid.get_children(): c.queue_free()
@@ -242,7 +230,7 @@ func _animate_cards() -> void:
 func _post_move_check() -> void:
 	# 1. Incrementa e avisa a UI sobre o movimento
 	moves_count += 1
-	moves_updated.emit(moves_count,record_moves)
+	moves_updated.emit(moves_count)
 
 	# 2. Verifica se o jogador venceu
 	if _check_win_condition():
@@ -279,12 +267,6 @@ func _check_win_condition() -> bool:
 	return all_match
 
 func _handle_victory() -> void:
-	win_sfx.play()
-	var result = score_manager.update_stage_result(_stage_id,moves_count,2)
-	
-	if result["new_stars"]:
-		print("Você conseguiu mais estrelas para esta fase!")
-	if result["new_record"]:
-		print("Novo recorde de movimentos!")
+	win_sfx.play()	
 	await get_tree().create_timer(0.5).timeout
 	game_won.emit(moves_count)

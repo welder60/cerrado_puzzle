@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://b36gp54io4kqq"]
+[gd_scene load_steps=13 format=3 uid="uid://b36gp54io4kqq"]
 
 [ext_resource type="StyleBox" uid="uid://bifftooe260b" path="res://assets/styles/window.tres" id="1_86fr6"]
+[ext_resource type="Script" uid="uid://bdpdrfibkniqp" path="res://scenes/VictoryScreen.gd" id="1_aemqt"]
 [ext_resource type="Texture2D" uid="uid://dpc2dux5mhg4l" path="res://assets/ui/icons/star_full.png" id="2_70mwv"]
 [ext_resource type="Texture2D" uid="uid://ba0cvf7v8484r" path="res://assets/ui/icons/star_empty.png" id="3_86fr6"]
 
@@ -82,6 +83,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.27752772, 0.27752772, 0.27752772, 1)
+script = ExtResource("1_aemqt")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -158,7 +160,7 @@ texture_disabled = ExtResource("3_86fr6")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="HighscoreMessage" type="Label" parent="PanelContainer/VBoxContainer"]
+[node name="RecordLabel" type="Label" parent="PanelContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
@@ -167,7 +169,7 @@ label_settings = SubResource("LabelSettings_86fr6")
 horizontal_alignment = 1
 
 [node name="ActionButtons" type="VBoxContainer" parent="PanelContainer/VBoxContainer"]
-custom_minimum_size = Vector2(600, 0)
+custom_minimum_size = Vector2(700, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 18
@@ -178,7 +180,7 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_86fr6")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 70
 theme_override_styles/normal = SubResource("StyleBoxFlat_aemqt")
 text = "Continuar"
 
@@ -187,7 +189,7 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_86fr6")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 70
 theme_override_styles/normal = SubResource("StyleBoxFlat_yqmlf")
 text = "Jogar Novamente"
 
@@ -196,6 +198,6 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_kftox")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 70
 theme_override_styles/normal = SubResource("StyleBoxFlat_7jara")
 text = "Menu Principal"
