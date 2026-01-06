@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cnlu0x7j6snup" path="res://scripts/confirmation.gd" id="2_6lci1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_31153"]
-font_size = 50
+font_size = 80
 font_color = Color(0.21960784, 0.31764707, 0.14117648, 1)
 shadow_color = Color(0.21960784, 0.31764707, 0.14117648, 1)
 shadow_offset = Vector2(0, 0)
@@ -126,6 +126,7 @@ shadow_size = 2
 shadow_offset = Vector2(0, 3)
 
 [node name="Confirmation" type="PanelContainer"]
+custom_minimum_size = Vector2(700, 700)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -144,30 +145,31 @@ script = ExtResource("2_6lci1")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
 theme_override_constants/separation = 20
 alignment = 1
 
 [node name="Message" type="Label" parent="VBoxContainer"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 80
 text = "Tem certeza que deseja sair da partida?"
 label_settings = SubResource("LabelSettings_31153")
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Buttons" type="VBoxContainer" parent="VBoxContainer"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_vertical = 3
 theme_override_constants/separation = 18
 alignment = 1
 
 [node name="Back" type="Button" parent="VBoxContainer/Buttons"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_jn7u6")
 theme_override_font_sizes/font_size = 80

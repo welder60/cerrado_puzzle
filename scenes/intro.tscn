@@ -1,0 +1,111 @@
+[gd_scene load_steps=8 format=3 uid="uid://sbum26wriavq"]
+
+[ext_resource type="Script" uid="uid://ywv8lfxxrerj" path="res://scripts/splash.gd" id="1_4bx60"]
+[ext_resource type="Texture2D" uid="uid://frj6sh8ymk8k" path="res://assets/ui/icons/egress_logo.png" id="1_ioskq"]
+[ext_resource type="PackedScene" uid="uid://ctm5qe5ot5yt7" path="res://scenes/Main.tscn" id="2_i2l1n"]
+[ext_resource type="AudioStream" uid="uid://caiv635rlagdf" path="res://assets/sfx/SF1_SFX_sfx_CastSpell.wav" id="3_i2l1n"]
+
+[sub_resource type="Animation" id="Animation_wfs7u"]
+resource_name = "splash_animation"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_i2l1n")
+}],
+"times": PackedFloat32Array(0.7)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_es01l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0naf5"]
+_data = {
+&"RESET": SubResource("Animation_es01l"),
+&"splash_animation": SubResource("Animation_wfs7u")
+}
+
+[node name="Intro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_4bx60")
+next_scene = ExtResource("2_i2l1n")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../MarginContainer/TextureRect")
+libraries = {
+&"": SubResource("AnimationLibrary_0naf5")
+}
+movie_quit_on_finish = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("1_ioskq")
+stretch_mode = 5
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -20.0
+pitch_scale = 0.42

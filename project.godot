@@ -11,9 +11,8 @@ config_version=5
 [application]
 
 config/name="Cerrado Puzzle"
-run/main_scene="uid://ctm5qe5ot5yt7"
+run/main_scene="uid://sbum26wriavq"
 config/features=PackedStringArray("4.5", "Forward Plus")
-boot_splash/image="uid://ugbplmn4exko"
 config/icon="res://icon.svg"
 
 [display]
@@ -22,6 +21,7 @@ window/size/viewport_width=1080
 window/size/viewport_height=2340
 window/size/window_width_override=800
 window/size/window_height_override=1400
+window/stretch/mode="viewport"
 window/handheld/orientation=1
 
 [dotnet]

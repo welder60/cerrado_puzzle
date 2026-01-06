@@ -58,7 +58,6 @@ visible = false
 layout_mode = 2
 
 [node name="HowToPlay" parent="UIManager" instance=ExtResource("7_q8u5g")]
-visible = false
 layout_mode = 2
 
 [node name="About" parent="UIManager" instance=ExtResource("7_jlsqs")]
@@ -76,6 +75,7 @@ z_index = 10
 layout_mode = 2
 
 [node name="QuickPlayMenu" parent="UIManager" instance=ExtResource("11_qmy6f")]
+visible = false
 layout_mode = 2
 
 [node name="ClickSFX" type="AudioStreamPlayer2D" parent="UIManager"]

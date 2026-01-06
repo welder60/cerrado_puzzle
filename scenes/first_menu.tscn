@@ -64,10 +64,10 @@ shadow_color = Color(0, 0, 0, 0.36078432)
 shadow_size = 2
 shadow_offset = Vector2(0, 3)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l72w3"]
-bg_color = Color(0.9079727, 0.24813586, 3.85046e-07, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_onje3"]
+bg_color = Color(0.7455393, 0.19563156, 0, 1)
 border_width_bottom = 3
-border_color = Color(0.7325631, 0.20607248, 0, 1)
+border_color = Color(0.5216642, 0.1372695, 1.4439226e-07, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -294,7 +294,7 @@ size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_2wh52")
 theme_override_font_sizes/font_size = 80
-theme_override_styles/normal = SubResource("StyleBoxFlat_l72w3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_onje3")
 text = "Partida Rápida"
 
 [node name="HTPButton" type="Button" parent="Buttons"]
