@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://b36gp54io4kqq"]
 
 [ext_resource type="StyleBox" uid="uid://bifftooe260b" path="res://assets/styles/window.tres" id="1_86fr6"]
-[ext_resource type="Script" uid="uid://bdpdrfibkniqp" path="res://scenes/VictoryScreen.gd" id="1_aemqt"]
+[ext_resource type="Script" uid="uid://bdpdrfibkniqp" path="res://scripts/VictoryScreen.gd" id="1_aemqt"]
 [ext_resource type="Texture2D" uid="uid://dpc2dux5mhg4l" path="res://assets/ui/icons/star_full.png" id="2_70mwv"]
 [ext_resource type="Texture2D" uid="uid://ba0cvf7v8484r" path="res://assets/ui/icons/star_empty.png" id="3_86fr6"]
 

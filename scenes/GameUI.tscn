@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://l6e50qovrfld"]
 
-[ext_resource type="Script" uid="uid://x57mjtxbf62q" path="res://scenes/GameUI.gd" id="1_56cg4"]
+[ext_resource type="Script" uid="uid://x57mjtxbf62q" path="res://scripts/GameUI.gd" id="1_56cg4"]
 [ext_resource type="Script" uid="uid://c8325d8qf1bvf" path="res://scripts/GameBoard.gd" id="1_rs3te"]
 [ext_resource type="PackedScene" uid="uid://df0thsjlco4v2" path="res://scenes/Card.tscn" id="3_4s3j0"]
 [ext_resource type="AudioStream" uid="uid://dx2v4pv24a0xu" path="res://assets/sfx/movement-swipe-whoosh-3-186577.mp3" id="3_7ro0d"]

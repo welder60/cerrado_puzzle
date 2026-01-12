@@ -105,7 +105,7 @@ func quit_game():
 	confirmation.confirm_text = "Sair da partida"
 	confirmation.dismiss_text = "Permanecer"
 	confirmation.reset_signal()
-	confirmation.confirm_button.pressed.connect(_on_PlayButton_pressed)	
+	confirmation.confirm_button.pressed.connect(_on_MenuButton_pressed)	
 	show_confirmation()
 
 # --- Funções de Atualização de Dados ---

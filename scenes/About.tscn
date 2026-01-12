@@ -299,7 +299,7 @@ text = "Voltar"
 [node name="TabContainer" type="TabContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8pwg6")
-current_tab = 10
+current_tab = 3
 tabs_visible = false
 
 [node name="1_Cerrado" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
@@ -468,7 +468,6 @@ label_settings = SubResource("LabelSettings_tl6ss")
 autowrap_mode = 2
 
 [node name="4_VeadoCampeiro" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 3
 
@@ -521,7 +520,7 @@ size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.23304835, 0.14386132, 0.07313914, 1)
 theme_override_fonts/font = SubResource("FontFile_e042l")
 theme_override_font_sizes/font_size = 40
-text = "é um dos cervídeos mais emblemáticos da América do Sul e um símbolo vivo das paisagens abertas do Cerrado e dos Pampas.
+text = "É um dos cervídeos mais emblemáticos da América do Sul e um símbolo vivo das paisagens abertas do Cerrado e dos Pampas.
 Diferente de outros cervos que preferem matas densas, o campeiro evoluiu para viver em campos limpos, onde sua visão aguçada e sua velocidade são as principais defesas contra predadores."
 label_settings = SubResource("LabelSettings_tl6ss")
 autowrap_mode = 2
@@ -875,6 +874,7 @@ label_settings = SubResource("LabelSettings_tl6ss")
 autowrap_mode = 2
 
 [node name="11_coruja" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 10
 
